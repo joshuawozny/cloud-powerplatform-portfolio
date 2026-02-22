@@ -171,12 +171,6 @@ This portfolio evolves as I progress through my roadmap.
 
 - [Azure Resource Naming (CAF-Aligned](./standards/azure-resource-naming.md)
 
-- [Power Platform Naming Standards](./standards/)
+- [Power Platform Naming Standards](./standards/power-platform-naming.md)
 
 - [DevOps Pipeline Naming Standards](./standards/devops-pipeline-naming.md)
-
-### **5. DevOps Pipeline Naming Standards**
-Naming conventions for CI/CD pipelines and IaC files.  
-➡️ `./devops-pipeline-naming.md`
-
----

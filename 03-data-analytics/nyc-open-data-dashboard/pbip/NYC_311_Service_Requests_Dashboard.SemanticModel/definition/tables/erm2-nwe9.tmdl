@@ -1,0 +1,436 @@
+table erm2-nwe9
+	lineageTag: 3918b0ad-83f8-47e5-a1dd-b1f530a2e56b
+
+	column unique_key
+		dataType: int64
+		formatString: 0
+		lineageTag: e97083a9-ce77-4e6f-b4dd-78ef0ddacad3
+		summarizeBy: sum
+		sourceColumn: unique_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3ad17f62-440c-48b8-91a8-bc1f505a48f7
+		summarizeBy: none
+		sourceColumn: created_date
+
+		variation Variation
+			isDefault
+			relationship: ba6c27a5-fe48-4a9d-8e36-d8e0ff18e702
+			defaultHierarchy: LocalDateTable_af2e3d70-a548-412a-8e08-63431c3aa1b3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column closed_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6ef35cf8-63da-4ce7-917a-34c57ee24b50
+		summarizeBy: none
+		sourceColumn: closed_date
+
+		variation Variation
+			isDefault
+			relationship: 6a54f4f4-652c-4859-b6ed-9c20f460dab0
+			defaultHierarchy: LocalDateTable_3d476cf2-1526-4b49-9d4b-80cc80750413.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column agency
+		dataType: string
+		lineageTag: 977ef81b-78f7-413b-8ba0-d532f44c6b9d
+		summarizeBy: none
+		sourceColumn: agency
+
+		annotation SummarizationSetBy = Automatic
+
+	column agency_name
+		dataType: string
+		lineageTag: 5d036ed4-fec7-4dad-9954-ec58f6f60a7d
+		summarizeBy: none
+		sourceColumn: agency_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column complaint_type
+		dataType: string
+		lineageTag: 20848e15-4303-47be-a2bc-302169c61b8d
+		summarizeBy: none
+		sourceColumn: complaint_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column descriptor
+		dataType: string
+		lineageTag: 133f5912-f64a-447c-a581-4d0614062bde
+		summarizeBy: none
+		sourceColumn: descriptor
+
+		annotation SummarizationSetBy = Automatic
+
+	column descriptor_2
+		dataType: string
+		lineageTag: faecd702-e680-4e41-8595-d417f2cf0d0b
+		summarizeBy: none
+		sourceColumn: descriptor_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_type
+		dataType: string
+		lineageTag: f803c8b2-ec40-4d47-9e46-482ad59c44ac
+		summarizeBy: none
+		sourceColumn: location_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column incident_zip
+		dataType: int64
+		formatString: 0
+		lineageTag: e82f55a3-2d5d-4bde-9d01-f4706de0a55f
+		summarizeBy: sum
+		sourceColumn: incident_zip
+
+		annotation SummarizationSetBy = Automatic
+
+	column intersection_street_1
+		dataType: string
+		lineageTag: 43d265fe-4961-4ca8-97b6-aca8af3fd3c3
+		summarizeBy: none
+		sourceColumn: intersection_street_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column intersection_street_2
+		dataType: string
+		lineageTag: 361d7c34-101c-48d2-8d9e-1bb6b3cd2095
+		summarizeBy: none
+		sourceColumn: intersection_street_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column incident_address
+		dataType: string
+		lineageTag: f2d3fd64-816a-4fc3-97a2-fc18b688f50b
+		summarizeBy: none
+		sourceColumn: incident_address
+
+		annotation SummarizationSetBy = Automatic
+
+	column street_name
+		dataType: string
+		lineageTag: f912c80e-1f6d-4ccf-b1a3-b17dd1693470
+		summarizeBy: none
+		sourceColumn: street_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column cross_street_1
+		dataType: string
+		lineageTag: dde158e8-ddb9-45de-af38-2ba1e17de8f5
+		summarizeBy: none
+		sourceColumn: cross_street_1
+
+		annotation SummarizationSetBy = Automatic
+
+	column cross_street_2
+		dataType: string
+		lineageTag: bfe11aa7-11e9-4b2c-a27c-cad484c71081
+		summarizeBy: none
+		sourceColumn: cross_street_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column address_type
+		dataType: string
+		lineageTag: a627a03f-0387-4929-92f6-8e465ee8c452
+		summarizeBy: none
+		sourceColumn: address_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 5200bdc1-de24-4df3-a133-867ae0b5adad
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column facility_type
+		dataType: string
+		lineageTag: caa853b6-8a07-4683-9087-5ae9e10bbe18
+		summarizeBy: none
+		sourceColumn: facility_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column landmark
+		dataType: string
+		lineageTag: b2bf8c02-39b7-4e48-9c18-8366ed266ff4
+		summarizeBy: none
+		sourceColumn: landmark
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 8135bbd6-afb8-4057-9886-11342b4158b7
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	column resolution_description
+		dataType: string
+		lineageTag: 4ba7c063-814b-4da1-9f06-d150ef1a9c68
+		summarizeBy: none
+		sourceColumn: resolution_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column resolution_action_updated_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2222f5c0-2797-4276-867c-56899a6747b1
+		summarizeBy: none
+		sourceColumn: resolution_action_updated_date
+
+		variation Variation
+			isDefault
+			relationship: c5df3519-e4f8-40ee-8194-bb452f598635
+			defaultHierarchy: LocalDateTable_2d6a33ae-5ead-4389-a6f7-cba0d2cfe82c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column community_board
+		dataType: string
+		lineageTag: bb17c7be-0567-49e6-bcd7-a447e0f76a0c
+		summarizeBy: none
+		sourceColumn: community_board
+
+		annotation SummarizationSetBy = Automatic
+
+	column council_district
+		dataType: int64
+		formatString: 0
+		lineageTag: 445c6c75-8044-4320-817d-7989534ec805
+		summarizeBy: sum
+		sourceColumn: council_district
+
+		annotation SummarizationSetBy = Automatic
+
+	column police_precinct
+		dataType: string
+		lineageTag: c5e9b01c-3d08-42f2-95dc-277599c0a3a0
+		summarizeBy: none
+		sourceColumn: police_precinct
+
+		annotation SummarizationSetBy = Automatic
+
+	column bbl
+		dataType: int64
+		formatString: 0
+		lineageTag: b53cd9d4-48fa-4ab8-95f5-02aeddff5df7
+		summarizeBy: sum
+		sourceColumn: bbl
+
+		annotation SummarizationSetBy = Automatic
+
+	column borough
+		dataType: string
+		lineageTag: 5d92660b-4698-42ee-87b8-c671f0e81683
+		summarizeBy: none
+		sourceColumn: borough
+
+		annotation SummarizationSetBy = Automatic
+
+	column x_coordinate_state_plane
+		dataType: int64
+		formatString: 0
+		lineageTag: 3ea6a156-7190-43d6-b3e6-b5e83616efc4
+		summarizeBy: sum
+		sourceColumn: x_coordinate_state_plane
+
+		annotation SummarizationSetBy = Automatic
+
+	column y_coordinate_state_plane
+		dataType: int64
+		formatString: 0
+		lineageTag: a417f730-d201-45bd-9a3e-f3b75d67e607
+		summarizeBy: sum
+		sourceColumn: y_coordinate_state_plane
+
+		annotation SummarizationSetBy = Automatic
+
+	column open_data_channel_type
+		dataType: string
+		lineageTag: 134a8439-6fcf-4eb4-a54f-8f015e5bf9f9
+		summarizeBy: none
+		sourceColumn: open_data_channel_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column park_facility_name
+		dataType: string
+		lineageTag: b7ca3aa5-8d28-4cb4-8226-306c26c15bb7
+		summarizeBy: none
+		sourceColumn: park_facility_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column park_borough
+		dataType: string
+		lineageTag: 4d3a0cc7-85e3-4360-ac78-8bde1ef98c6c
+		summarizeBy: none
+		sourceColumn: park_borough
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicle_type
+		dataType: string
+		lineageTag: 07227e45-4b88-4000-8a0f-1965baa78f9b
+		summarizeBy: none
+		sourceColumn: vehicle_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column bridge_highway_name
+		dataType: string
+		lineageTag: f1dd2c12-5930-492f-a6e8-0d317858025d
+		summarizeBy: none
+		sourceColumn: bridge_highway_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column bridge_highway_direction
+		dataType: string
+		lineageTag: e10fefa1-78e5-4247-8f3c-442d93877f25
+		summarizeBy: none
+		sourceColumn: bridge_highway_direction
+
+		annotation SummarizationSetBy = Automatic
+
+	column road_ramp
+		dataType: string
+		lineageTag: 2fdb8ae4-0cd3-4d51-b4da-382bca36cf3e
+		summarizeBy: none
+		sourceColumn: road_ramp
+
+		annotation SummarizationSetBy = Automatic
+
+	column bridge_highway_segment
+		dataType: string
+		lineageTag: a7416f1a-f560-42df-8cda-5f43ada44c28
+		summarizeBy: none
+		sourceColumn: bridge_highway_segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column taxi_pick_up_location
+		dataType: string
+		lineageTag: 3ca8215b-8e85-4635-be15-21c69d447a4d
+		summarizeBy: none
+		sourceColumn: taxi_pick_up_location
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: a510842d-b76c-42b5-b12a-e95847be81fb
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: 1ab94940-27a6-41df-b937-bef7148d0cbd
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'location.type'
+		dataType: string
+		lineageTag: a2049968-08a3-4b19-a1d0-1bdc11b9f18a
+		summarizeBy: none
+		sourceColumn: location.type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'location.coordinates.0'
+		dataType: string
+		lineageTag: 94584ba0-3e8a-436b-b5b0-95b1641e838b
+		summarizeBy: none
+		sourceColumn: location.coordinates.0
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'location.coordinates.1'
+		dataType: string
+		lineageTag: 12e4e173-7090-49e6-9a63-38d01d85ee8a
+		summarizeBy: none
+		sourceColumn: location.coordinates.1
+
+		annotation SummarizationSetBy = Automatic
+
+	column ':@computed_region_f5dn_yrer'
+		dataType: int64
+		formatString: 0
+		lineageTag: a6c026b7-e5af-4231-9616-de6642ea870a
+		summarizeBy: sum
+		sourceColumn: :@computed_region_f5dn_yrer
+
+		annotation SummarizationSetBy = Automatic
+
+	column ':@computed_region_yeji_bk3q'
+		dataType: int64
+		formatString: 0
+		lineageTag: e2e49378-3adb-4182-b564-63e6cec7a864
+		summarizeBy: sum
+		sourceColumn: :@computed_region_yeji_bk3q
+
+		annotation SummarizationSetBy = Automatic
+
+	column ':@computed_region_sbqj_enih'
+		dataType: int64
+		formatString: 0
+		lineageTag: f4907091-4d94-4c0c-8884-7c151a26febd
+		summarizeBy: sum
+		sourceColumn: :@computed_region_sbqj_enih
+
+		annotation SummarizationSetBy = Automatic
+
+	column ':@computed_region_92fq_4b7q'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e7fcf55-6035-4501-adc6-19a5ceaacd42
+		summarizeBy: sum
+		sourceColumn: :@computed_region_92fq_4b7q
+
+		annotation SummarizationSetBy = Automatic
+
+	partition erm2-nwe9 = m
+		mode: import
+		source =
+				let
+				    Source = Json.Document(Web.Contents("https://data.cityofnewyork.us/resource/erm2-nwe9.json")),
+				    #"Converted to Table" = Table.FromList(Source, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"unique_key", "created_date", "closed_date", "agency", "agency_name", "complaint_type", "descriptor", "descriptor_2", "location_type", "incident_zip", "intersection_street_1", "intersection_street_2", "incident_address", "street_name", "cross_street_1", "cross_street_2", "address_type", "city", "facility_type", "landmark", "status", "resolution_description", "resolution_action_updated_date", "community_board", "council_district", "police_precinct", "bbl", "borough", "x_coordinate_state_plane", "y_coordinate_state_plane", "open_data_channel_type", "park_facility_name", "park_borough", "vehicle_type", "bridge_highway_name", "bridge_highway_direction", "road_ramp", "bridge_highway_segment", "taxi_pick_up_location", "latitude", "longitude", "location", ":@computed_region_f5dn_yrer", ":@computed_region_yeji_bk3q", ":@computed_region_sbqj_enih", ":@computed_region_92fq_4b7q"}, {"unique_key", "created_date", "closed_date", "agency", "agency_name", "complaint_type", "descriptor", "descriptor_2", "location_type", "incident_zip", "intersection_street_1", "intersection_street_2", "incident_address", "street_name", "cross_street_1", "cross_street_2", "address_type", "city", "facility_type", "landmark", "status", "resolution_description", "resolution_action_updated_date", "community_board", "council_district", "police_precinct", "bbl", "borough", "x_coordinate_state_plane", "y_coordinate_state_plane", "open_data_channel_type", "park_facility_name", "park_borough", "vehicle_type", "bridge_highway_name", "bridge_highway_direction", "road_ramp", "bridge_highway_segment", "taxi_pick_up_location", "latitude", "longitude", "location", ":@computed_region_f5dn_yrer", ":@computed_region_yeji_bk3q", ":@computed_region_sbqj_enih", ":@computed_region_92fq_4b7q"}),
+				    #"Expanded location" = Table.ExpandRecordColumn(#"Expanded Column1", "location", {"type", "coordinates"}, {"location.type", "location.coordinates"}),
+				    #"Split Column" = Table.SplitColumn(#"Expanded location", "location.coordinates", each _, {"location.coordinates.0", "location.coordinates.1"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Split Column",{{"unique_key", Int64.Type}, {"created_date", type datetime}, {"closed_date", type datetime}, {"agency", type text}, {"agency_name", type text}, {"complaint_type", type text}, {"descriptor", type text}, {"descriptor_2", type text}, {"location_type", type text}, {"incident_zip", Int64.Type}, {"intersection_street_1", type text}, {"intersection_street_2", type text}, {"incident_address", type text}, {"street_name", type text}, {"cross_street_1", type text}, {"cross_street_2", type text}, {"address_type", type text}, {"city", type text}, {"facility_type", type text}, {"landmark", type text}, {"status", type text}, {"resolution_description", type text}, {"resolution_action_updated_date", type datetime}, {"community_board", type text}, {"council_district", Int64.Type}, {"police_precinct", type text}, {"bbl", Int64.Type}, {"borough", type text}, {"x_coordinate_state_plane", Int64.Type}, {"y_coordinate_state_plane", Int64.Type}, {"open_data_channel_type", type text}, {"park_facility_name", type text}, {"park_borough", type text}, {"vehicle_type", type text}, {"bridge_highway_name", type any}, {"bridge_highway_direction", type any}, {"road_ramp", type any}, {"bridge_highway_segment", type any}, {"taxi_pick_up_location", type any}, {"latitude", type number}, {"longitude", type number}, {"location.type", type text}, {"location.coordinates.0", type any}, {"location.coordinates.1", type any}, {":@computed_region_f5dn_yrer", Int64.Type}, {":@computed_region_yeji_bk3q", Int64.Type}, {":@computed_region_sbqj_enih", Int64.Type}, {":@computed_region_92fq_4b7q", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

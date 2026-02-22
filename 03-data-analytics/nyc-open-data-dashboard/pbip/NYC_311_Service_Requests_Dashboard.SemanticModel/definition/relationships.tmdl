@@ -1,0 +1,15 @@
+relationship ba6c27a5-fe48-4a9d-8e36-d8e0ff18e702
+	joinOnDateBehavior: datePartOnly
+	fromColumn: erm2-nwe9.created_date
+	toColumn: LocalDateTable_af2e3d70-a548-412a-8e08-63431c3aa1b3.Date
+
+relationship 6a54f4f4-652c-4859-b6ed-9c20f460dab0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: erm2-nwe9.closed_date
+	toColumn: LocalDateTable_3d476cf2-1526-4b49-9d4b-80cc80750413.Date
+
+relationship c5df3519-e4f8-40ee-8194-bb452f598635
+	joinOnDateBehavior: datePartOnly
+	fromColumn: erm2-nwe9.resolution_action_updated_date
+	toColumn: LocalDateTable_2d6a33ae-5ead-4389-a6f7-cba0d2cfe82c.Date
+

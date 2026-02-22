@@ -10,5 +10,13 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_ProTooling = ["DevMode"]
 
+annotation PBI_QueryOrder = ["erm2-nwe9"]
+
+ref table erm2-nwe9
+ref table DateTableTemplate_cabeabed-379e-4393-a730-0f6f9f9f7ba3
+ref table LocalDateTable_af2e3d70-a548-412a-8e08-63431c3aa1b3
+ref table LocalDateTable_3d476cf2-1526-4b49-9d4b-80cc80750413
+ref table LocalDateTable_2d6a33ae-5ead-4389-a6f7-cba0d2cfe82c
+
 ref cultureInfo en-US
 

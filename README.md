@@ -160,7 +160,7 @@ This portfolio evolves as I progress through my roadmap.
 # **📫 Connect With Me**
 
 - **GitHub Profile:** [github.com/joshuawozny](https://github.com/joshuawozny)
-- **LinkedIn:** [joshjoshua-wozny-bathnh](https://www.linkedin.com/in/joshua-wozny-bathnh)
+- **LinkedIn:** [joshua-wozny-bathnh](https://www.linkedin.com/in/joshua-wozny-bathnh)
 - **Email:** joshwozny@live.com
 
 ---

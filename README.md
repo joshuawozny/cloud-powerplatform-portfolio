@@ -166,3 +166,17 @@ This portfolio evolves as I progress through my roadmap.
 ---
 ## 📘 Documentation & Standards
 - [File Naming Standards](./standards/file-naming-standards.md)
+
+- [Folder Structure Standards](./standards/folder-structure-standards.md)
+
+- [Azure Resource Naming (CAF-Aligned](./standards/azure-resource-naming.md)
+
+- [Power Platform Naming Standards](./standards/)
+
+- [DevOps Pipeline Naming Standards](./standards/devops-pipeline-naming.md)
+
+### **5. DevOps Pipeline Naming Standards**
+Naming conventions for CI/CD pipelines and IaC files.  
+➡️ `./devops-pipeline-naming.md`
+
+---

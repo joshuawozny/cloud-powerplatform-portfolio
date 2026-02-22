@@ -50,4 +50,4 @@ These projects align with the following certifications:
 
 ## 🔗 Navigation
 Return to portfolio root:  
-➡️ [../..](../..)
+[➡️](../)

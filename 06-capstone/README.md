@@ -51,21 +51,19 @@ Include your architecture diagram.
 - Risk register  
 
 ## 📂 Folder Structure
-
-/full-solution
-   - architecture-diagram.png
-   - power-app/
-   - dataverse-plugin/
-   - azure-functions/
-   - ci-cd-pipeline/
-   - iac/
-   - agile-docs/
-   - pmp-docs/
-   - demo-video.mp4 (optional)
-   - readme.md
-
-/README.md
-
+```
+full-solution/
+   architecture-diagram.png
+   power-app/
+   dataverse-plugin/
+   azure-functions/
+   ci-cd-pipeline/
+   iac/
+   agile-docs/
+   pmp-docs/
+   readme.md
+README.md
+```
 
 ## 🎓 Certifications Demonstrated
 - PL‑400  

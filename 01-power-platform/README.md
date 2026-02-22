@@ -29,22 +29,21 @@ Describe the architecture and include a diagram if available.
 - API integrations  
 
 ## 📂 Folder Structure
-/cloud-flow-dataverse-demo
+```
+cloud-flow-dataverse-demo/
    - flow-diagram.png
    - explanation.md
    - sample-data.json
-
-/dataverse-csharp-plugin
+dataverse-csharp-plugin/
    - plugin.cs
    - architecture.md
    - test-cases.md
-
-/pcf-component
+pcf-component/
    - src/
    - screenshots/
    - readme.md
-
-/README.md
+README.md
+```
 
 ## 🚀 How to Use / Demo
 Explain how someone could test or understand the solution.

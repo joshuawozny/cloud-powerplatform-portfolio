@@ -31,17 +31,17 @@ Describe the architecture and include a diagram if available.
 ## 📂 Folder Structure
 ```
 cloud-flow-dataverse-demo/
-   - flow-diagram.png
-   - explanation.md
-   - sample-data.json
+   flow-diagram.png
+   explanation.md
+   sample-data.json
 dataverse-csharp-plugin/
-   - plugin.cs
-   - architecture.md
-   - test-cases.md
+   plugin.cs
+   architecture.md
+   test-cases.md
 pcf-component/
-   - src/
-   - screenshots/
-   - readme.md
+   src/
+   screenshots/
+   readme.md
 README.md
 ```
 

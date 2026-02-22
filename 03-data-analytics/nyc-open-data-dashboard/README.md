@@ -77,10 +77,7 @@ Full list of measures:
 /screenshots
 /docs
 ```
-🔗 Links
-- PBIP Files: ./pbip
-- DAX Measures: ./dax
-- Screenshots: ./screenshots
+## 🔗 Links
 - NYC Open Data API: https://data.cityofnewyork.us
 
 ## 📝 Lessons Learned

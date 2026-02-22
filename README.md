@@ -6,7 +6,7 @@ This repository is a curated collection of projects that reflect my professional
 Rather than listing job duties, this portfolio shows the **real solutions**, **architectures**, and **automations** I’ve built along the way.
 
 ---
-docs/professional-development-roadmap.md
+
 # **📌 Portfolio Overview**
 
 This repository is organized into six major domains that align with my technical roadmap and real‑world experience:

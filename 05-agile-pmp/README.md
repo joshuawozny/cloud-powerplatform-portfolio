@@ -22,19 +22,17 @@ Examples:
 - Miro / Lucidchart  
 
 ## 📂 Folder Structure
-
-/agile-case-study
-   - kanban-board.png
-   - sprint-plan.md
-   - retrospective.md
-
-/pmp-hybrid-project
-   - project-charter.md
-   - risk-register.xlsx
-   - stakeholder-analysis.md
-
-/README.md
-
+```
+agile-case-study/
+   kanban-board.png
+   sprint-plan.md
+   retrospective.md
+pmp-hybrid-project/
+   project-charter.md
+   risk-register.xlsx
+   stakeholder-analysis.md
+README.md
+```
 
 ## 🎓 Related Certifications
 - PMI‑ACP  

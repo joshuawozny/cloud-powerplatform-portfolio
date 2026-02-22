@@ -1,44 +1,53 @@
-# Project Title – Power BI Dashboard
+# 📊 Data Analytics Portfolio
 
-## 📌 Overview
-Describe the dashboard:
-- What dataset is used?
-- What business questions does it answer?
-- Who is the intended audience?
+This section of my portfolio showcases projects focused on data modeling, DAX development, visualization, and analytical storytelling using Power BI. These projects reflect both my professional experience as a Data Analyst/Power BI Specialist with the State of Vermont Agency of Transportation and my ongoing development toward the PL‑300 certification.
 
-## 📊 Dashboard Features
-- KPI cards  
-- Time‑intelligence measures  
-- Drill‑through pages  
-- Custom visuals  
+My approach emphasizes:
+- Clean, well‑structured data models  
+- Meaningful DAX measures  
+- Clear, actionable insights  
+- Real‑world datasets with complexity  
+- Professional documentation and reproducibility  
 
-## 🧠 DAX Highlights
-List key measures and what they do.
+---
 
-## 🧩 Data Model
-Include:
-- Star schema diagram  
-- Table relationships  
-- Data transformations  
+## 📂 Projects in This Section
 
-## 📂 Folder Structure
-```
-powerbi-dashboard/
-   pbix-file/
-   dax-measures.md
-   data-model-diagram.png
-   insights-summary.md
-README.md
-```
+### **1. NYC Open Data Power BI Dashboard (PL‑300)**
+A full analytics project using the NYC Open Data API (311 Service Requests).  
+Includes data modeling, DAX, time‑intelligence, and interactive visuals.  
+➡️ `./nyc-open-data-dashboard`
 
-## 🎓 Related Certifications
-- PL‑300  
-- PL‑900 (if integrated with Power Platform)
+### **2. (Future) Time Intelligence DAX Library**
+A reusable library of common and advanced DAX patterns.  
+➡️ `./dax-library` *(placeholder)*
 
-## 📝 Insights & Takeaways
-Summarize the insights the dashboard provides.
+### **3. (Future) Data Model Optimization Case Study**
+A before‑and‑after comparison of a poorly structured model vs. a star schema.  
+➡️ `./model-optimization` *(placeholder)*
 
-## 🔗 Links
-- PBIX file  
-- Screenshots  
-- GitHub source
+---
+
+## 🎓 Certifications Supported
+These projects align with the following certifications:
+
+- **PL‑300 — Power BI Data Analyst**  
+- **PL‑900 — Power Platform Fundamentals**  
+- **PL‑400 — Power Platform Developer** (for integration projects)  
+
+---
+
+## 🧠 Skills Demonstrated
+- Data modeling (star schema, relationships, normalization)  
+- Power Query transformations  
+- DAX (time intelligence, KPIs, ranking, filtering)  
+- Visualization best practices  
+- API‑based data acquisition  
+- Analytical storytelling  
+- Documentation and reproducibility  
+
+---
+
+## 🔗 Navigation
+Return to portfolio root:  
+➡️ [../..](../..)

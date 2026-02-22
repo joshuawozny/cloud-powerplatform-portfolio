@@ -22,15 +22,14 @@ Include:
 - Data transformations  
 
 ## 📂 Folder Structure
-
-/powerbi-dashboard
-   - pbix-file/
-   - dax-measures.md
-   - data-model-diagram.png
-   - insights-summary.md
-
-/README.md
-
+```
+powerbi-dashboard/
+   pbix-file/
+   dax-measures.md
+   data-model-diagram.png
+   insights-summary.md
+README.md
+```
 
 ## 🎓 Related Certifications
 - PL‑300  

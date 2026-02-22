@@ -164,13 +164,6 @@ This portfolio evolves as I progress through my roadmap.
 - **Email:** joshwozny@live.com
 
 ---
-## 📘 Documentation & Standards
-- [File Naming Standards](./standards/file-naming-standards.md)
-
-- [Folder Structure Standards](./standards/folder-structure-standards.md)
-
-- [Azure Resource Naming (CAF-Aligned](./standards/azure-resource-naming.md)
-
-- [Power Platform Naming Standards](./standards/power-platform-naming.md)
-
-- [DevOps Pipeline Naming Standards](./standards/devops-pipeline-naming.md)
+## 📘 Documentation & Roadmap
+- [Professional Development Roadmap](./roadmap/README.md)
+- [Standards Documentation](./standards/README.md)

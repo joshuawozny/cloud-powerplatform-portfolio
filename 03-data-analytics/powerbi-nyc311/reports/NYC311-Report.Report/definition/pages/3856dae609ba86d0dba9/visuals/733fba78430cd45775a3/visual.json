@@ -1,0 +1,161 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "733fba78430cd45775a3",
+  "position": {
+    "x": 9.6055210305030236,
+    "y": 349.91540896832447,
+    "z": 3003,
+    "height": 112.52181778589257,
+    "width": 307.37667297609676,
+    "tabOrder": 3003
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_Complaint"
+                        }
+                      },
+                      "Hierarchy": "complaint_type Hierarchy"
+                    }
+                  },
+                  "Level": "Complaint Type"
+                }
+              },
+              "queryRef": "Dim_Complaint.complaint_type Hierarchy.Complaint Type",
+              "nativeQueryRef": "complaint_type Hierarchy Complaint Type",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_Complaint"
+                        }
+                      },
+                      "Hierarchy": "complaint_type Hierarchy"
+                    }
+                  },
+                  "Level": "Descriptor"
+                }
+              },
+              "queryRef": "Dim_Complaint.complaint_type Hierarchy.Descriptor",
+              "nativeQueryRef": "complaint_type Hierarchy Descriptor",
+              "active": false
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Complaint Type'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "syncGroup": {
+      "groupName": "Complaint Type",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2852f1a956add020c778",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_Complaint"
+                  }
+                },
+                "Hierarchy": "complaint_type Hierarchy"
+              }
+            },
+            "Level": "Complaint Type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8b01c84000eac4730ac8",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_Complaint"
+                  }
+                },
+                "Hierarchy": "complaint_type Hierarchy"
+              }
+            },
+            "Level": "Descriptor"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

@@ -1,0 +1,180 @@
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - reports/**
+
+pool:
+  name: Default
+
+variables:
+  - group: PowerBI-Credentials
+
+stages:
+  - stage: Validate
+    displayName: 'Validate Report Files'
+    jobs:
+      - job: ValidateFiles
+        steps:
+          - task: PowerShell@2
+            displayName: 'Check PBIP structure'
+            inputs:
+              targetType: 'inline'
+              script: |
+                $files = Get-ChildItem -Path "$(Build.SourcesDirectory)/reports" -Recurse
+                if ($files.Count -eq 0) {
+                  Write-Error "No report files found"
+                  exit 1
+                }
+                Write-Host "Found $($files.Count) report files - validation passed"
+                foreach ($folder in Get-ChildItem "$(Build.SourcesDirectory)/reports" -Directory) {
+                  if ($folder.Name -ne $folder.Name.TrimEnd()) {
+                    Write-Error "Folder has trailing space: '$($folder.Name)'"
+                    exit 1
+                  }
+                }
+                Write-Host "All folder names are clean"
+
+  - stage: DeployToTest
+    displayName: 'Deploy Dev to Test'
+    dependsOn: Validate
+    jobs:
+      - deployment: DeployTest
+        environment: 'PowerBI-Test'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: PowerShell@2
+                  displayName: 'Trigger Dev to Test'
+                  inputs:
+                    targetType: 'inline'
+                    script: |
+                      $tokenBody = @{
+                        grant_type    = "client_credentials"
+                        client_id     = "$(CLIENT_ID)"
+                        client_secret = "$(CLIENT_SECRET)"
+                        scope         = "https://api.fabric.microsoft.com/.default"
+                      }
+                      $tokenResponse = Invoke-RestMethod `
+                        -Uri "https://login.microsoftonline.com/$(TENANT_ID)/oauth2/v2.0/token" `
+                        -Method POST -Body $tokenBody
+                      $h = @{ Authorization = "Bearer $($tokenResponse.access_token)" }
+                      $b = [PSCustomObject]@{
+                        sourceStageId        = "5da38ecc-72dd-4989-bbcc-f1d04b80248c"
+                        targetStageId        = "fa3aba2f-fb9f-4f83-94a0-e1201b194bcb"
+                        isBackwardDeployment = $false
+                        note                 = "Deployed via Azure DevOps"
+                      } | ConvertTo-Json -Depth 3
+                      try {
+                        Invoke-RestMethod `
+                          -Uri "https://api.fabric.microsoft.com/v1/deploymentPipelines/$(PIPELINE_ID)/deploy" `
+                          -Method POST -Headers $h -Body $b -ContentType "application/json"
+                        Write-Host "Dev to Test deployment triggered successfully"
+                      } catch {
+                        $statusCode = $_.Exception.Response.StatusCode.value__
+                        $responseBody = $_.Exception.Response.GetResponseStream()
+                        $reader = New-Object System.IO.StreamReader($responseBody)
+                        $reader.BaseStream.Position = 0
+                        $errorDetail = $reader.ReadToEnd()
+                        Write-Host "Status Code: $statusCode"
+                        Write-Host "API Error Detail: $errorDetail"
+                        if ($errorDetail -like "*NoArtifactsToDeploy*") {
+                          Write-Host "Nothing to deploy - Dev and Test are already in sync. Skipping."
+                          exit 0
+                        }
+                        throw
+                      }
+
+  - stage: DeployToProd
+    displayName: 'Deploy Test to Prod'
+    dependsOn: DeployToTest
+    jobs:
+      - deployment: DeployProd
+        environment: 'PowerBI-Prod'
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - task: PowerShell@2
+                  displayName: 'Promote Test to Prod'
+                  inputs:
+                    targetType: 'inline'
+                    script: |
+                      $tokenBody = @{
+                        grant_type    = "client_credentials"
+                        client_id     = "$(CLIENT_ID)"
+                        client_secret = "$(CLIENT_SECRET)"
+                        scope         = "https://api.fabric.microsoft.com/.default"
+                      }
+                      $tokenResponse = Invoke-RestMethod `
+                        -Uri "https://login.microsoftonline.com/$(TENANT_ID)/oauth2/v2.0/token" `
+                        -Method POST -Body $tokenBody
+                      $h = @{ Authorization = "Bearer $($tokenResponse.access_token)" }
+                      $b = [PSCustomObject]@{
+                        sourceStageId        = "fa3aba2f-fb9f-4f83-94a0-e1201b194bcb"
+                        targetStageId        = "d5e25a18-97f8-42f5-956d-8f9a02b624de"
+                        isBackwardDeployment = $false
+                        note                 = "Deployed via Azure DevOps"
+                      } | ConvertTo-Json -Depth 3
+                      try {
+                        Invoke-RestMethod `
+                          -Uri "https://api.fabric.microsoft.com/v1/deploymentPipelines/$(PIPELINE_ID)/deploy" `
+                          -Method POST -Headers $h -Body $b -ContentType "application/json"
+                        Write-Host "Test to Prod deployment triggered successfully"
+                      } catch {
+                        $statusCode = $_.Exception.Response.StatusCode.value__
+                        $responseBody = $_.Exception.Response.GetResponseStream()
+                        $reader = New-Object System.IO.StreamReader($responseBody)
+                        $reader.BaseStream.Position = 0
+                        $errorDetail = $reader.ReadToEnd()
+                        Write-Host "Status Code: $statusCode"
+                        Write-Host "API Error Detail: $errorDetail"
+                        if ($errorDetail -like "*NoArtifactsToDeploy*") {
+                          Write-Host "Nothing to deploy - Test and Prod are already in sync. Skipping."
+                          exit 0
+                        }
+                        throw
+                      }
+
+  - stage: SyncToGitHub
+    displayName: 'Sync to GitHub Portfolio'
+    dependsOn: DeployToProd
+    condition: succeeded()
+    jobs:
+      - job: GitHubSync
+        steps:
+          - checkout: self
+            persistCredentials: true
+          - task: PowerShell@2
+            displayName: 'Sync powerbi-nyc311 to GitHub'
+            inputs:
+              targetType: 'inline'
+              script: |
+                git clone https://$(GITHUB_TOKEN)@github.com/joshuawozny/cloud-powerplatform-portfolio.git github_repo
+
+                if (Test-Path "github_repo/03-data-analytics/powerbi-nyc311") {
+                  Remove-Item -Recurse -Force "github_repo/03-data-analytics/powerbi-nyc311"
+                }
+
+                New-Item -ItemType Directory -Force -Path "github_repo/03-data-analytics/powerbi-nyc311" | Out-Null
+
+                # Copy everything except the github_repo folder itself
+                Get-ChildItem -Path "$(Build.SourcesDirectory)" | Where-Object { $_.Name -ne "github_repo" } | ForEach-Object {
+                  Copy-Item -Recurse -Force $_.FullName "github_repo/03-data-analytics/powerbi-nyc311/"
+                }
+
+                cd github_repo
+                git config user.email "joshuawozny@wozny-dev.com"
+                git config user.name "DevOps Sync"
+                git add "03-data-analytics/powerbi-nyc311/"
+                $changes = git status --porcelain
+                if ($changes) {
+                  git commit -m "sync: update powerbi-nyc311 from Azure DevOps [skip ci]"
+                  git push origin main
+                  Write-Host "Synced to GitHub successfully"
+                } else {
+                  Write-Host "No changes to sync"
+                }

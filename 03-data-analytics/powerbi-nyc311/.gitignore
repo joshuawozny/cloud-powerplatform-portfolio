@@ -1,0 +1,23 @@
+# Power BI
+*.pbix
+.pbi/
+localSettings.json
+
+# Python
+__pycache__/
+*.py[cod]
+.env
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Temp
+*.tmp
+*.temp
+*.log

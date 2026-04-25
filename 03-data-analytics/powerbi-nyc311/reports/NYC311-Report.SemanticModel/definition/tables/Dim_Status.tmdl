@@ -1,0 +1,37 @@
+table Dim_Status
+	lineageTag: 2d19ed3f-50ee-44ad-94dc-ee1f25d4b04c
+
+	column status_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 36503a77-6035-4ae2-9131-5096288ff7bd
+		summarizeBy: none
+		sourceColumn: status_key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column status
+		dataType: string
+		lineageTag: 58e5a046-6a39-48a6-9230-377cf6d27423
+		summarizeBy: none
+		sourceColumn: status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Status = m
+		mode: import
+		queryGroup: Dimensions
+		source =
+				let
+				    Source = Sql.Database("t52pq5prlkturgp6ra5mlc3vqa-ooolzdhsejqufjqk5gl7v4lqx4.datawarehouse.fabric.microsoft.com", "NYC311_Lakehouse"),
+				    dbo_gold_dim_status = Source{[Schema="dbo",Item="gold_dim_status"]}[Data]
+				in
+				    dbo_gold_dim_status
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

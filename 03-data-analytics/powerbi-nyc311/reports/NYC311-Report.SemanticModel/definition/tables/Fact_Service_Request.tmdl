@@ -1,0 +1,172 @@
+table Fact_Service_Request
+	lineageTag: 464b3e17-ab7d-4788-8d7d-56415a637a3a
+
+	refreshPolicy
+		policyType: basic
+		rollingWindowGranularity: year
+		rollingWindowPeriods: 15
+		incrementalGranularity: day
+		incrementalPeriods: 30
+		pollingExpression = let Maxload_date = List.Max(Fact_Service_Request[load_date]), accountForNull = if Maxload_date = null then #datetime(1901, 01, 01, 00, 00, 00) else Maxload_date in accountForNull
+		sourceExpression =
+			let
+			    Source = Sql.Database("t52pq5prlkturgp6ra5mlc3vqa-ooolzdhsejqufjqk5gl7v4lqx4.datawarehouse.fabric.microsoft.com", "NYC311_Lakehouse"),
+			    dbo_gold_fact_service_request = Source{[Schema="dbo",Item="gold_fact_service_request"]}[Data],
+			    #"Filtered Rows" = Table.SelectRows(dbo_gold_fact_service_request, each [created_date] >= RangeStart and [created_date] < RangeEnd),
+			    #"Dev Mode Filter" = if isDevMode = true then Table.FirstN(#"Filtered Rows", 10000) else #"Filtered Rows"
+			in
+			    #"Dev Mode Filter"
+
+	column unique_key
+		dataType: string
+		isKey
+		lineageTag: 7a52e842-4e17-42b4-8723-6783cf3ed22c
+		summarizeBy: none
+		sourceColumn: unique_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4cb0e425-d699-4b92-9b69-f696d3e3fd5e
+		summarizeBy: none
+		sourceColumn: created_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_key_created
+		dataType: int64
+		formatString: 0
+		lineageTag: 5b316b06-a256-44d9-9e52-fc3eccfef921
+		summarizeBy: none
+		sourceColumn: date_key_created
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_key_closed
+		dataType: int64
+		formatString: 0
+		lineageTag: e98d87bf-d7b2-4310-9d9b-bccc867a166a
+		summarizeBy: sum
+		sourceColumn: date_key_closed
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_key_due
+		dataType: int64
+		formatString: 0
+		lineageTag: 83ffb963-37c5-439b-8c45-fc0cc5dc7142
+		summarizeBy: sum
+		sourceColumn: date_key_due
+
+		annotation SummarizationSetBy = Automatic
+
+	column date_key_updated
+		dataType: int64
+		formatString: 0
+		lineageTag: 5139b165-cc4a-46a0-9b31-ede535865b1a
+		summarizeBy: sum
+		sourceColumn: date_key_updated
+
+		annotation SummarizationSetBy = Automatic
+
+	column agency_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 10d363fd-e670-40f5-95a7-3ff19c849170
+		summarizeBy: none
+		sourceColumn: agency_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column location_key
+		dataType: int64
+		formatString: 0
+		lineageTag: bd4ea855-20e7-413b-b843-f4fa3b89e9fc
+		summarizeBy: none
+		sourceColumn: location_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column complaint_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b555213-6d2b-4a0a-a2ed-f9200a64328a
+		summarizeBy: none
+		sourceColumn: complaint_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column status_key
+		dataType: int64
+		formatString: 0
+		lineageTag: 2a44464f-4812-4e44-a7e4-5051f2da7353
+		summarizeBy: none
+		sourceColumn: status_key
+
+		annotation SummarizationSetBy = Automatic
+
+	column resolution_description
+		dataType: string
+		lineageTag: 36b3a97a-3d0e-4a0c-a42d-5330d984dbb7
+		isDefaultLabel
+		summarizeBy: none
+		sourceColumn: resolution_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column resolution_hours
+		dataType: double
+		lineageTag: 4b1eaf73-cbc8-489c-addf-66b7848eaa9e
+		summarizeBy: sum
+		sourceColumn: resolution_hours
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column is_overdue
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d6c9c43a-8528-4812-b49b-7cbb37a74e0f
+		summarizeBy: none
+		sourceColumn: is_overdue
+
+		annotation SummarizationSetBy = Automatic
+
+	column source
+		dataType: string
+		lineageTag: d48cbe45-df71-48f1-a6d3-832c9955e5ef
+		summarizeBy: none
+		sourceColumn: source
+
+		annotation SummarizationSetBy = Automatic
+
+	column load_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f8298db6-69ff-4ddb-9b20-8e71ba4fdf4f
+		summarizeBy: none
+		sourceColumn: load_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Fact_Service_Request = m
+		mode: import
+		queryGroup: Facts
+		source =
+				let
+				    Source = Sql.Database("t52pq5prlkturgp6ra5mlc3vqa-ooolzdhsejqufjqk5gl7v4lqx4.datawarehouse.fabric.microsoft.com", "NYC311_Lakehouse"),
+				    dbo_gold_fact_service_request = Source{[Schema="dbo",Item="gold_fact_service_request"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(dbo_gold_fact_service_request, each [created_date] >= RangeStart and [created_date] < RangeEnd),
+				    #"Dev Mode Filter" = if isDevMode = true then Table.FirstN(#"Filtered Rows", 10000) else #"Filtered Rows"
+				in
+				    #"Dev Mode Filter"
+
+	annotation PBI_IsMQueryFoldable = True
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

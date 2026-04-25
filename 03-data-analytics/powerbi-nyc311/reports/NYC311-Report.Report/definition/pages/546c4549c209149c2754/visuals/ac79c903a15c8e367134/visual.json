@@ -1,0 +1,298 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "ac79c903a15c8e367134",
+  "position": {
+    "x": 646.594577071804,
+    "y": 269.94790098872346,
+    "z": 7000,
+    "height": 230.46935420381132,
+    "width": 618.85289554727115,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_Date"
+                        }
+                      },
+                      "Hierarchy": "cal_year Hierarchy"
+                    }
+                  },
+                  "Level": "Calendar Year"
+                }
+              },
+              "queryRef": "Dim_Date.cal_year Hierarchy.cal_year",
+              "nativeQueryRef": "cal_year Hierarchy cal_year",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_Date"
+                        }
+                      },
+                      "Hierarchy": "cal_year Hierarchy"
+                    }
+                  },
+                  "Level": "CY Quarter"
+                }
+              },
+              "queryRef": "Dim_Date.cal_year Hierarchy.cal_quarter_label",
+              "nativeQueryRef": "cal_year Hierarchy cal_quarter_label",
+              "active": false
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_Date"
+                        }
+                      },
+                      "Hierarchy": "cal_year Hierarchy"
+                    }
+                  },
+                  "Level": "CY Month"
+                }
+              },
+              "queryRef": "Dim_Date.cal_year Hierarchy.cal_month_year_label",
+              "nativeQueryRef": "cal_year Hierarchy cal_month_year_label",
+              "active": false
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_Date"
+                        }
+                      },
+                      "Hierarchy": "cal_year Hierarchy"
+                    }
+                  },
+                  "Level": "Date"
+                }
+              },
+              "queryRef": "Dim_Date.cal_year Hierarchy.date",
+              "nativeQueryRef": "cal_year Hierarchy date",
+              "active": false
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_Date"
+                        }
+                      },
+                      "Hierarchy": "cal_year Hierarchy"
+                    }
+                  },
+                  "Level": "CY Day"
+                }
+              },
+              "queryRef": "Dim_Date.cal_year Hierarchy.cal_day_name",
+              "nativeQueryRef": "cal_year Hierarchy cal_day_name",
+              "active": false
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Total Complaints"
+                }
+              },
+              "queryRef": "_Measures.Total Complaints",
+              "nativeQueryRef": "Total Complaints"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "categoryAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "valueAxis": [
+        {
+          "properties": {
+            "showAxisTitle": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8f4f8358400d9b522896",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_Date"
+                  }
+                },
+                "Hierarchy": "cal_year Hierarchy"
+              }
+            },
+            "Level": "Calendar Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "97d1e95861e65aae8ad9",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_Date"
+                  }
+                },
+                "Hierarchy": "cal_year Hierarchy"
+              }
+            },
+            "Level": "CY Quarter"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f8c5774d7344c7b52e03",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_Date"
+                  }
+                },
+                "Hierarchy": "cal_year Hierarchy"
+              }
+            },
+            "Level": "CY Month"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ef83db4e409d44c1914c",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_Date"
+                  }
+                },
+                "Hierarchy": "cal_year Hierarchy"
+              }
+            },
+            "Level": "Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "bac3d6d57cba06310eb4",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_Date"
+                  }
+                },
+                "Hierarchy": "cal_year Hierarchy"
+              }
+            },
+            "Level": "CY Day"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7b61cdfb42d5c0d02a09",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Complaints"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+table Dim_Complaint
+	lineageTag: e5b22640-025d-40db-94bb-c25a5274c7f0
+
+	column complaint_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 86e15136-732a-4542-ac58-26a986091470
+		summarizeBy: none
+		sourceColumn: complaint_key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column complaint_type
+		dataType: string
+		isHidden
+		lineageTag: d205646e-97b1-4b27-8296-b57fa97c5219
+		summarizeBy: none
+		sourceColumn: complaint_type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column descriptor
+		dataType: string
+		isHidden
+		lineageTag: 9da8480b-5720-4f88-b596-04238d585eaa
+		summarizeBy: none
+		sourceColumn: descriptor
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy 'complaint_type Hierarchy'
+		lineageTag: 43c0e3ff-78e4-4baa-93c2-26f4c5267785
+
+		level 'Complaint Type'
+			lineageTag: 118e0c0c-2736-4c86-970c-2bfdf064dbcb
+			column: complaint_type
+
+		level Descriptor
+			lineageTag: 91b8c08d-a29e-424c-b0b1-d03ab010426d
+			column: descriptor
+
+	partition Dim_Complaint = m
+		mode: import
+		queryGroup: Dimensions
+		source =
+				let
+				    Source = Sql.Database("t52pq5prlkturgp6ra5mlc3vqa-ooolzdhsejqufjqk5gl7v4lqx4.datawarehouse.fabric.microsoft.com", "NYC311_Lakehouse"),
+				    dbo_gold_dim_complaint = Source{[Schema="dbo",Item="gold_dim_complaint"]}[Data]
+				in
+				    dbo_gold_dim_complaint
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

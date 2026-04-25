@@ -1,0 +1,119 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.8.0/schema.json",
+  "name": "058a401004952ecc74c8",
+  "position": {
+    "x": 10.977738320574884,
+    "y": 363.63758186904306,
+    "z": 5000,
+    "height": 91.938558434814652,
+    "width": 628.47551885291216,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_Complaint"
+                        }
+                      },
+                      "Hierarchy": "complaint_type Hierarchy"
+                    }
+                  },
+                  "Level": "Complaint Type"
+                }
+              },
+              "queryRef": "Dim_Complaint.complaint_type Hierarchy.Complaint Type",
+              "nativeQueryRef": "complaint_type Hierarchy Complaint Type",
+              "active": true
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_Complaint"
+                        }
+                      },
+                      "Hierarchy": "complaint_type Hierarchy"
+                    }
+                  },
+                  "Level": "Descriptor"
+                }
+              },
+              "queryRef": "Dim_Complaint.complaint_type Hierarchy.Descriptor",
+              "nativeQueryRef": "complaint_type Hierarchy Descriptor",
+              "active": false
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "header": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Complaint Type'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "syncGroup": {
+      "groupName": "Complaint Type",
+      "fieldChanges": true,
+      "filterChanges": true
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

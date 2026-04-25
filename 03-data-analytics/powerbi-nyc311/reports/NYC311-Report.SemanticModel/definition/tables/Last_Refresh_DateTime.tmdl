@@ -1,0 +1,26 @@
+table Last_Refresh_DateTime
+	lineageTag: 2ce7654b-6fb1-4565-a7e1-e5b8ba23de33
+
+	column Last_Refresh_DateTime
+		dataType: dateTime
+		formatString: General Date
+		displayFolder: Metadata
+		lineageTag: 7e19239b-4dd8-49fb-b6dc-e65d58ddc3a8
+		summarizeBy: none
+		sourceColumn: Last_Refresh_DateTime
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Last_Refresh_DateTime = m
+		mode: import
+		queryGroup: Dates
+		source =
+				let
+				    Source = DateTime.LocalNow()
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = DateTime
+

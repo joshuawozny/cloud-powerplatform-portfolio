@@ -1,0 +1,216 @@
+table _Measures
+	lineageTag: b9d5bc3f-1611-4c61-90ee-f9dc1499fe9d
+
+	measure 'Total Complaints' =
+			
+			COUNTROWS(Fact_Service_Request)
+		formatString: 0
+		displayFolder: Core
+		lineageTag: c3f6847d-7fd9-407e-9017-ab93f1ab210f
+
+	measure 'Closed Complaints' =
+			
+			CALCULATE(
+			    [Total Complaints],
+			    Dim_Status[status] = "Closed"
+			)
+		formatString: 0
+		displayFolder: Core
+		lineageTag: 02ad447e-f083-42c3-b41c-416ae0cced45
+
+	measure 'Open Complaints' =
+			
+			CALCULATE(
+			    [Total Complaints],
+			    Dim_Status[status] = "Open"
+			)
+		formatString: 0
+		displayFolder: Core
+		lineageTag: 21e9a739-e974-40fa-84c9-5ccd14c7f414
+
+	measure 'Overdue Complaints' =
+			
+			CALCULATE(
+			    [Total Complaints],
+			    Fact_Service_Request[is_overdue] = TRUE()
+			)
+		formatString: 0
+		displayFolder: Core
+		lineageTag: 67216818-9757-43fb-a5e0-8fd8692ff45d
+
+	measure 'Overdue Rate' =
+			
+			DIVIDE(
+			    [Overdue Complaints],
+			    [Total Complaints],
+			    0
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Core
+		lineageTag: bfa74948-734c-44cd-9ea3-1bfb2f4b6abd
+
+	measure 'Avg Resolution Hours' =
+			
+			CALCULATE(
+			    AVERAGE(Fact_Service_Request[resolution_hours]),
+			    Fact_Service_Request[resolution_hours] > 0
+			)
+		displayFolder: Resolution
+		lineageTag: c5cb76d7-20e0-4b4c-ab7a-c737d3b789e0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Resolution Days' =
+			
+			DIVIDE([Avg Resolution Hours], 24, 0)
+		formatString: 0.0
+		displayFolder: Resolution
+		lineageTag: beefd837-5abc-4557-ae66-f9c215fc539e
+
+	measure 'Median Resolution Hours' =
+			
+			CALCULATE(
+			    MEDIAN(Fact_Service_Request[resolution_hours]),
+			    Fact_Service_Request[resolution_hours] > 0
+			)
+		displayFolder: Resolution
+		lineageTag: 71ece520-224a-4f08-a31e-498488615716
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'YTD Complaints' =
+			
+			CALCULATE(
+			    [Total Complaints],
+			    DATESYTD(Dim_Date[date])
+			)
+		formatString: 0
+		displayFolder: Time Intelligence - CY
+		lineageTag: 5304a0b4-ed34-4dce-ab07-22bba5e76894
+
+	measure 'MTD Complaints' =
+			
+			CALCULATE(
+			    [Total Complaints],
+			    DATESMTD(Dim_Date[date])
+			)
+		formatString: 0
+		displayFolder: Time Intelligence - CY
+		lineageTag: aa321501-aeea-4ee8-872e-09bb0faeb396
+
+	measure 'Complaints Last 30 Days' =
+			
+			CALCULATE(
+			    [Total Complaints],
+			    DATESINPERIOD(
+			        Dim_Date[date],
+			        MAX(Dim_Date[date]),
+			        -30,
+			        DAY
+			    )
+			)
+		formatString: 0
+		displayFolder: Time Intelligence - CY
+		lineageTag: 979403b3-d0c7-4277-9a1f-a43f7eec25db
+
+	measure 'Complaints vs Prior Year' =
+			
+			CALCULATE(
+			    [Total Complaints],
+			    SAMEPERIODLASTYEAR(Dim_Date[date])
+			)
+		formatString: 0
+		displayFolder: Time Intelligence - CY
+		lineageTag: 25b09e0c-a2bf-4c56-8fac-f5e82c66736f
+
+	measure 'YoY Change' =
+			
+			[Total Complaints] - [Complaints vs Prior Year]
+		formatString: 0
+		displayFolder: Time Intelligence - CY
+		lineageTag: 8582725c-507a-4876-b90f-52c874e76c58
+
+	measure 'YoY Change %' =
+			
+			DIVIDE(
+			    [YoY Change],
+			    [Complaints vs Prior Year],
+			    0
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		displayFolder: Time Intelligence - CY
+		lineageTag: cf51b8c5-f017-4f51-a1a9-79a3c7c9183c
+
+	measure 'Fiscal YTD Complaints' =
+			
+			CALCULATE(
+			    [Total Complaints],
+			    DATESYTD(Dim_Date[date], "6/30")
+			)
+		formatString: 0
+		displayFolder: Time Intelligence - FY
+		lineageTag: 5458f4e6-31e9-45f6-ad6b-90e19a104fb3
+
+	measure 'Fiscal QTD Complaints' =
+			
+			CALCULATE(
+			    [Total Complaints],
+			    DATESQTD(Dim_Date[date])
+			)
+		formatString: 0
+		displayFolder: Time Intelligence - FY
+		lineageTag: abede779-86f4-4db1-b3cc-630bd8b333d4
+
+	measure 'Total Closed' =
+			
+			CALCULATE(
+			    [Total Complaints],
+			    USERELATIONSHIP(
+			        Fact_Service_Request[date_key_closed],
+			        Dim_Date[date_key]
+			    ),
+			    NOT ISBLANK(Fact_Service_Request[date_key_closed])
+			)
+		formatString: 0
+		displayFolder: Core
+		lineageTag: ba05733a-51c7-4fad-ae0f-319a1ff61811
+
+	measure 'Avg Resolution Days by Close Date' =
+			
+			CALCULATE(
+			    [Avg Resolution Days],
+			    USERELATIONSHIP(
+			        Fact_Service_Request[date_key_closed],
+			        Dim_Date[date_key]
+			    )
+			)
+		displayFolder: Resolution
+		lineageTag: 07071f37-74f7-4af2-a994-5ade9b7152e7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Monthly Complaints' =
+			
+			AVERAGEX(
+			    VALUES(Dim_Date[cal_year_month_key]),
+			    CALCULATE([Total Complaints])
+			)
+		displayFolder: Core
+		lineageTag: c13c634d-f971-4041-a73b-4d057e210c4a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

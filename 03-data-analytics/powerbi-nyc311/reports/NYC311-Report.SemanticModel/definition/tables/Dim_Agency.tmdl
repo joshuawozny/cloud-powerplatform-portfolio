@@ -1,0 +1,45 @@
+table Dim_Agency
+	lineageTag: b4886389-eea6-460e-ae08-7b87bf8786b4
+
+	column agency_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 9da1b675-a932-4976-871b-3a407e5a51c2
+		summarizeBy: none
+		sourceColumn: agency_key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column agency_code
+		dataType: string
+		lineageTag: 53ae765e-4135-4d89-aa4c-7770865ea320
+		summarizeBy: none
+		sourceColumn: agency_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column agency_name
+		dataType: string
+		lineageTag: dfe6ce41-8b33-4806-a06a-4f125b2cf077
+		summarizeBy: none
+		sourceColumn: agency_name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Agency = m
+		mode: import
+		queryGroup: Dimensions
+		source =
+				let
+				    Source = Sql.Database("t52pq5prlkturgp6ra5mlc3vqa-ooolzdhsejqufjqk5gl7v4lqx4.datawarehouse.fabric.microsoft.com", "NYC311_Lakehouse"),
+				    dbo_gold_dim_agency = Source{[Schema="dbo",Item="gold_dim_agency"]}[Data]
+				in
+				    dbo_gold_dim_agency
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

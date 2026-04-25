@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "NYC311-Report "
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ebc669c8-cdc5-43e5-ab0b-b74e81838dab"
+  }
+}

@@ -1,0 +1,35 @@
+relationship AutoDetected_eb67980b-5c46-4002-ace3-99fe1fb75c5f
+	fromColumn: Fact_Service_Request.agency_key
+	toColumn: Dim_Agency.agency_key
+
+relationship AutoDetected_136788c2-744c-4f1f-9ea8-c49cb126f281
+	fromColumn: Fact_Service_Request.location_key
+	toColumn: Diim_Location.location_key
+
+relationship AutoDetected_27210dae-f164-4329-86f5-a24d3cd56828
+	fromColumn: Fact_Service_Request.status_key
+	toColumn: Dim_Status.status_key
+
+relationship 95f4a9f8-764c-11e6-b8cd-0c0cbacfc0e2
+	fromColumn: Fact_Service_Request.date_key_created
+	toColumn: Dim_Date.date_key
+
+relationship ab9ac684-6701-6f2c-e271-bddf4ee56011
+	isActive: false
+	fromColumn: Fact_Service_Request.date_key_closed
+	toColumn: Dim_Date.date_key
+
+relationship efd42e1e-d200-26fb-f7ae-576722663409
+	isActive: false
+	fromColumn: Fact_Service_Request.date_key_due
+	toColumn: Dim_Date.date_key
+
+relationship cbda68d4-2200-f14a-ba9a-69afe8f0565f
+	isActive: false
+	fromColumn: Fact_Service_Request.date_key_updated
+	toColumn: Dim_Date.date_key
+
+relationship 42db5190-f196-de22-f932-2bd4fdadbbfa
+	fromColumn: Fact_Service_Request.complaint_key
+	toColumn: Dim_Complaint.complaint_key
+

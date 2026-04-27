@@ -1,11 +1,12 @@
 table Dim_Agency
-	lineageTag: b4886389-eea6-460e-ae08-7b87bf8786b4
+	lineageTag: d967562f-b20d-41c7-829c-aed2b828c573
 
 	column agency_key
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 9da1b675-a932-4976-871b-3a407e5a51c2
+		sourceProviderType: int
+		lineageTag: 349bc970-29a1-4908-95ad-3cccec7a760c
 		summarizeBy: none
 		sourceColumn: agency_key
 
@@ -15,7 +16,8 @@ table Dim_Agency
 
 	column agency_code
 		dataType: string
-		lineageTag: 53ae765e-4135-4d89-aa4c-7770865ea320
+		sourceProviderType: varchar(8000)
+		lineageTag: 0231482e-117b-4b0d-8dca-e2cb294c9011
 		summarizeBy: none
 		sourceColumn: agency_code
 
@@ -23,14 +25,15 @@ table Dim_Agency
 
 	column agency_name
 		dataType: string
-		lineageTag: dfe6ce41-8b33-4806-a06a-4f125b2cf077
+		sourceProviderType: varchar(8000)
+		lineageTag: f7b0ec20-0a4d-4f19-b1a1-634c734d1d34
 		summarizeBy: none
 		sourceColumn: agency_name
 
 		annotation SummarizationSetBy = Automatic
 
 	partition Dim_Agency = m
-		mode: import
+		mode: dual
 		queryGroup: Dimensions
 		source =
 				let

@@ -28,11 +28,11 @@
                       "Hierarchy": "complaint_type Hierarchy"
                     }
                   },
-                  "Level": "Complaint Type"
+                  "Level": "complaint_type"
                 }
               },
-              "queryRef": "Dim_Complaint.complaint_type Hierarchy.Complaint Type",
-              "nativeQueryRef": "complaint_type Hierarchy Complaint Type",
+              "queryRef": "Dim_Complaint.complaint_type Hierarchy.complaint_type",
+              "nativeQueryRef": "complaint_type Hierarchy complaint_type",
               "active": true
             }
           ]
@@ -44,7 +44,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Diim_Location"
+                      "Entity": "Dim_Location"
                     }
                   },
                   "Property": "borough"
@@ -158,6 +158,45 @@
             "metadata": "_Measures.Total Complaints"
           }
         }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "120.76722259090815D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "Dim_Complaint"
+                          }
+                        },
+                        "Property": "complaint_type"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Request Large Bulky Item Collection'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -199,7 +238,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Diim_Location"
+                "Entity": "Dim_Location"
               }
             },
             "Property": "borough"
@@ -211,7 +250,7 @@
           "From": [
             {
               "Name": "d",
-              "Entity": "Diim_Location",
+              "Entity": "Dim_Location",
               "Type": 0
             }
           ],
@@ -266,7 +305,21 @@
         }
       },
       {
-        "name": "715bba20436d7bcae95c",
+        "name": "a1c630e67761245edd23",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Complaints"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9ae99c5880683e6bd803",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -279,7 +332,7 @@
                 "Hierarchy": "complaint_type Hierarchy"
               }
             },
-            "Level": "Complaint Type"
+            "Level": "complaint_type"
           }
         },
         "type": "TopN",
@@ -294,7 +347,7 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "d1",
+                        "Name": "d",
                         "Entity": "Dim_Complaint",
                         "Type": 0
                       },
@@ -311,13 +364,13 @@
                             "Hierarchy": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "d1"
+                                  "Source": "d"
                                 }
                               },
                               "Hierarchy": "complaint_type Hierarchy"
                             }
                           },
-                          "Level": "Complaint Type"
+                          "Level": "complaint_type"
                         },
                         "Name": "field"
                       }
@@ -344,7 +397,7 @@
               "Type": 2
             },
             {
-              "Name": "d1",
+              "Name": "d",
               "Entity": "Dim_Complaint",
               "Type": 0
             }
@@ -360,13 +413,13 @@
                           "Hierarchy": {
                             "Expression": {
                               "SourceRef": {
-                                "Source": "d1"
+                                "Source": "d"
                               }
                             },
                             "Hierarchy": "complaint_type Hierarchy"
                           }
                         },
-                        "Level": "Complaint Type"
+                        "Level": "complaint_type"
                       }
                     }
                   ],
@@ -379,41 +432,7 @@
               }
             }
           ]
-        },
-        "howCreated": "User"
-      },
-      {
-        "name": "b491e1cbbd622d5b208e",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Dim_Complaint"
-                  }
-                },
-                "Hierarchy": "complaint_type Hierarchy"
-              }
-            },
-            "Level": "Complaint Type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "20092e98204be84231b2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Complaints"
-          }
-        },
-        "type": "Advanced"
+        }
       }
     ]
   }

@@ -111,5 +111,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "10e15d3b748a97c5a770",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Overdue Rate"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

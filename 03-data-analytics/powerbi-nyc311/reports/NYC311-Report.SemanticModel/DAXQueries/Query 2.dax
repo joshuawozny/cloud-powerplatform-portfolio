@@ -1,0 +1,12 @@
+DEFINE VAR __DS0FilterTable = 
+	FILTER(
+		KEEPFILTERS(VALUES('Dim_Date'[cal_year])),
+		NOT('Dim_Date'[cal_year] IN {BLANK()})
+	)
+
+EVALUATE
+	SUMMARIZECOLUMNS(
+		__DS0FilterTable,
+		"Mincal_year", IGNORE(CALCULATE(MIN('Dim_Date'[cal_year]))),
+		"Maxcal_year", IGNORE(CALCULATE(MAX('Dim_Date'[cal_year])))
+	)

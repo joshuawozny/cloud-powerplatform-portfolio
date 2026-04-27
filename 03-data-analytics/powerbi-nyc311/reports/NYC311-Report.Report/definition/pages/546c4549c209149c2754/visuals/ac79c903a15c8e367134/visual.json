@@ -48,7 +48,7 @@
                       "Hierarchy": "cal_year Hierarchy"
                     }
                   },
-                  "Level": "CY Quarter"
+                  "Level": "Calendar Quarter"
                 }
               },
               "queryRef": "Dim_Date.cal_year Hierarchy.cal_quarter_label",
@@ -68,11 +68,31 @@
                       "Hierarchy": "cal_year Hierarchy"
                     }
                   },
-                  "Level": "CY Month"
+                  "Level": "Month"
                 }
               },
-              "queryRef": "Dim_Date.cal_year Hierarchy.cal_month_year_label",
-              "nativeQueryRef": "cal_year Hierarchy cal_month_year_label",
+              "queryRef": "Dim_Date.cal_year Hierarchy.cal_month_name",
+              "nativeQueryRef": "cal_year Hierarchy cal_month_name",
+              "active": false
+            },
+            {
+              "field": {
+                "HierarchyLevel": {
+                  "Expression": {
+                    "Hierarchy": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Dim_Date"
+                        }
+                      },
+                      "Hierarchy": "cal_year Hierarchy"
+                    }
+                  },
+                  "Level": "Day of Week"
+                }
+              },
+              "queryRef": "Dim_Date.cal_year Hierarchy.cal_day_name",
+              "nativeQueryRef": "cal_year Hierarchy cal_day_name",
               "active": false
             },
             {
@@ -93,26 +113,6 @@
               },
               "queryRef": "Dim_Date.cal_year Hierarchy.date",
               "nativeQueryRef": "cal_year Hierarchy date",
-              "active": false
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dim_Date"
-                        }
-                      },
-                      "Hierarchy": "cal_year Hierarchy"
-                    }
-                  },
-                  "Level": "CY Day"
-                }
-              },
-              "queryRef": "Dim_Date.cal_year Hierarchy.cal_day_name",
-              "nativeQueryRef": "cal_year Hierarchy cal_day_name",
               "active": false
             }
           ]
@@ -185,7 +185,139 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "8f4f8358400d9b522896",
+        "name": "586d708a317604adcbdb",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_Date"
+                  }
+                },
+                "Hierarchy": "cal_year Hierarchy"
+              }
+            },
+            "Level": "Calendar Quarter"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Dim_Date",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "cal_quarter_label"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              },
+              "Annotations": {
+                "filterExpressionMetadata": {
+                  "expressions": [
+                    {
+                      "HierarchyLevel": {
+                        "Expression": {
+                          "Hierarchy": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Dim_Date"
+                              }
+                            },
+                            "Hierarchy": "cal_year Hierarchy"
+                          }
+                        },
+                        "Level": "Calendar Quarter"
+                      }
+                    }
+                  ],
+                  "decomposedIdentities": {
+                    "values": [
+                      [
+                        {
+                          "0": [
+                            {
+                              "Literal": {
+                                "Value": "null"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    ],
+                    "columns": [
+                      {
+                        "value": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Dim_Date"
+                              }
+                            },
+                            "Property": "cal_quarter_label"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "valueMap": [
+                    {
+                      "0": "(Blank)"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "7447e5d85c64a7ae4eb2",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -204,7 +336,7 @@
         "type": "Advanced"
       },
       {
-        "name": "97d1e95861e65aae8ad9",
+        "name": "6b2b9c200480a031402d",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -217,13 +349,13 @@
                 "Hierarchy": "cal_year Hierarchy"
               }
             },
-            "Level": "CY Quarter"
+            "Level": "Month"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "f8c5774d7344c7b52e03",
+        "name": "cc21dec51722226dd907",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -236,13 +368,13 @@
                 "Hierarchy": "cal_year Hierarchy"
               }
             },
-            "Level": "CY Month"
+            "Level": "Day of Week"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "ef83db4e409d44c1914c",
+        "name": "9838d00a09ecba781479",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -261,26 +393,7 @@
         "type": "Categorical"
       },
       {
-        "name": "bac3d6d57cba06310eb4",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Dim_Date"
-                  }
-                },
-                "Hierarchy": "cal_year Hierarchy"
-              }
-            },
-            "Level": "CY Day"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "7b61cdfb42d5c0d02a09",
+        "name": "aa8cb9c90c6c4d50b500",
         "field": {
           "Measure": {
             "Expression": {

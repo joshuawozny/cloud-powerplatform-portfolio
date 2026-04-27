@@ -1,35 +1,35 @@
-relationship AutoDetected_eb67980b-5c46-4002-ace3-99fe1fb75c5f
+relationship 74185512-6927-3fb7-aba2-0102aaf21ebe
+	fromColumn: Fact_Service_Request.complaint_key
+	toColumn: Dim_Complaint.complaint_key
+
+relationship 18f1d251-cd6a-5236-82df-7120c753783f
+	fromColumn: Fact_Service_Request.location_key
+	toColumn: Dim_Location.location_key
+
+relationship 1adcbc24-82e2-2b68-84b5-bc48ac7aaf70
 	fromColumn: Fact_Service_Request.agency_key
 	toColumn: Dim_Agency.agency_key
 
-relationship AutoDetected_136788c2-744c-4f1f-9ea8-c49cb126f281
-	fromColumn: Fact_Service_Request.location_key
-	toColumn: Diim_Location.location_key
-
-relationship AutoDetected_27210dae-f164-4329-86f5-a24d3cd56828
+relationship 5e7f25a8-1045-8a1a-22a0-271e9ab9a7fc
 	fromColumn: Fact_Service_Request.status_key
 	toColumn: Dim_Status.status_key
 
-relationship 95f4a9f8-764c-11e6-b8cd-0c0cbacfc0e2
+relationship 706ed3b0-b40b-50e7-3f1b-f7627621d4ff
 	fromColumn: Fact_Service_Request.date_key_created
 	toColumn: Dim_Date.date_key
 
-relationship ab9ac684-6701-6f2c-e271-bddf4ee56011
+relationship 2d331590-4236-b8bd-f577-36a26309aa6e
 	isActive: false
 	fromColumn: Fact_Service_Request.date_key_closed
 	toColumn: Dim_Date.date_key
 
-relationship efd42e1e-d200-26fb-f7ae-576722663409
+relationship 7a2d1118-6f5b-ada1-2359-b84621137ee3
 	isActive: false
 	fromColumn: Fact_Service_Request.date_key_due
 	toColumn: Dim_Date.date_key
 
-relationship cbda68d4-2200-f14a-ba9a-69afe8f0565f
+relationship 83749265-9227-bb89-2dc3-0c774fdad926
 	isActive: false
 	fromColumn: Fact_Service_Request.date_key_updated
 	toColumn: Dim_Date.date_key
-
-relationship 42db5190-f196-de22-f932-2bd4fdadbbfa
-	fromColumn: Fact_Service_Request.complaint_key
-	toColumn: Dim_Complaint.complaint_key
 

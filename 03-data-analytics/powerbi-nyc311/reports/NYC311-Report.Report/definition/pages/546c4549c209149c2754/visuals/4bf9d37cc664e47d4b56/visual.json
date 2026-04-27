@@ -28,11 +28,11 @@
                       "Hierarchy": "complaint_type Hierarchy"
                     }
                   },
-                  "Level": "Complaint Type"
+                  "Level": "complaint_type"
                 }
               },
-              "queryRef": "Dim_Complaint.complaint_type Hierarchy.complaint_type",
-              "nativeQueryRef": "complaint_type Hierarchy complaint_type",
+              "queryRef": "Dim_Complaint.complaint_type Hierarchy.complaint_type1",
+              "nativeQueryRef": "complaint_type Hierarchy complaint_type1",
               "active": true
             },
             {
@@ -48,11 +48,11 @@
                       "Hierarchy": "complaint_type Hierarchy"
                     }
                   },
-                  "Level": "Descriptor"
+                  "Level": "descriptor"
                 }
               },
-              "queryRef": "Dim_Complaint.complaint_type Hierarchy.descriptor",
-              "nativeQueryRef": "complaint_type Hierarchy descriptor",
+              "queryRef": "Dim_Complaint.complaint_type Hierarchy.descriptor1",
+              "nativeQueryRef": "complaint_type Hierarchy descriptor1",
               "active": false
             }
           ]
@@ -150,7 +150,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "1c37064a80323db3bea4",
+        "name": "b4c92d879ac8d79850bd",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -163,129 +163,32 @@
                 "Hierarchy": "complaint_type Hierarchy"
               }
             },
-            "Level": "Complaint Type"
-          }
-        },
-        "type": "TopN",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "subquery",
-              "Expression": {
-                "Subquery": {
-                  "Query": {
-                    "Version": 2,
-                    "From": [
-                      {
-                        "Name": "d",
-                        "Entity": "Dim_Complaint",
-                        "Type": 0
-                      },
-                      {
-                        "Name": "_",
-                        "Entity": "_Measures",
-                        "Type": 0
-                      }
-                    ],
-                    "Select": [
-                      {
-                        "HierarchyLevel": {
-                          "Expression": {
-                            "Hierarchy": {
-                              "Expression": {
-                                "SourceRef": {
-                                  "Source": "d"
-                                }
-                              },
-                              "Hierarchy": "complaint_type Hierarchy"
-                            }
-                          },
-                          "Level": "Complaint Type"
-                        },
-                        "Name": "field"
-                      }
-                    ],
-                    "OrderBy": [
-                      {
-                        "Direction": 2,
-                        "Expression": {
-                          "Measure": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "_"
-                              }
-                            },
-                            "Property": "Total Complaints"
-                          }
-                        }
-                      }
-                    ],
-                    "Top": 10
-                  }
-                }
-              },
-              "Type": 2
-            },
-            {
-              "Name": "d",
-              "Entity": "Dim_Complaint",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "HierarchyLevel": {
-                        "Expression": {
-                          "Hierarchy": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "d"
-                              }
-                            },
-                            "Hierarchy": "complaint_type Hierarchy"
-                          }
-                        },
-                        "Level": "Complaint Type"
-                      }
-                    }
-                  ],
-                  "Table": {
-                    "SourceRef": {
-                      "Source": "subquery"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      },
-      {
-        "name": "a9dc3db4002031d1a670",
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Dim_Complaint"
-                  }
-                },
-                "Hierarchy": "complaint_type Hierarchy"
-              }
-            },
-            "Level": "Descriptor"
+            "Level": "complaint_type"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "6b8008b351e285b56790",
+        "name": "09f250d5a5390476cba7",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_Complaint"
+                  }
+                },
+                "Hierarchy": "complaint_type Hierarchy"
+              }
+            },
+            "Level": "descriptor"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "71f524529e65ee1b9eb7",
         "field": {
           "Measure": {
             "Expression": {

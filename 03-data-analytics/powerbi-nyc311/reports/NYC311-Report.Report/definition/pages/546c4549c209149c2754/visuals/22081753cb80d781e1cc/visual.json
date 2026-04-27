@@ -118,5 +118,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "60dc7be5029ce292aa1a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "YoY Change %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

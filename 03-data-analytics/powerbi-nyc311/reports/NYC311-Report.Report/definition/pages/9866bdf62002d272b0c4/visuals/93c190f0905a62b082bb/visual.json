@@ -4,10 +4,10 @@
   "position": {
     "x": 9.6055210305030236,
     "y": 500.85931087622913,
-    "z": 3,
+    "z": 3000,
     "height": 107.03294862560513,
     "width": 308.74889026616864,
-    "tabOrder": 3
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -17,22 +17,17 @@
           "projections": [
             {
               "field": {
-                "HierarchyLevel": {
+                "Column": {
                   "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dim_Date"
-                        }
-                      },
-                      "Hierarchy": "cal_year Hierarchy"
+                    "SourceRef": {
+                      "Entity": "Dim_Date"
                     }
                   },
-                  "Level": "Calendar Year"
+                  "Property": "cal_year"
                 }
               },
-              "queryRef": "Dim_Date.cal_year Hierarchy.Calendar Year",
-              "nativeQueryRef": "cal_year Hierarchy Calendar Year",
+              "queryRef": "Dim_Date.cal_year",
+              "nativeQueryRef": "cal_year",
               "active": true
             }
           ]
@@ -81,6 +76,11 @@
             }
           }
         }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
       ]
     },
     "visualContainerObjects": {
@@ -115,7 +115,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "457d45a2725d8abbdced",
+        "name": "d03f6ed6d75087709760",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -131,7 +131,121 @@
             "Level": "Calendar Year"
           }
         },
-        "type": "Advanced"
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "d",
+              "Entity": "Dim_Date",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "d"
+                              }
+                            },
+                            "Property": "cal_year"
+                          }
+                        }
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
+                    }
+                  }
+                }
+              },
+              "Annotations": {
+                "filterExpressionMetadata": {
+                  "expressions": [
+                    {
+                      "HierarchyLevel": {
+                        "Expression": {
+                          "Hierarchy": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Dim_Date"
+                              }
+                            },
+                            "Hierarchy": "cal_year Hierarchy"
+                          }
+                        },
+                        "Level": "Calendar Year"
+                      }
+                    }
+                  ],
+                  "decomposedIdentities": {
+                    "values": [
+                      [
+                        {
+                          "0": [
+                            {
+                              "Literal": {
+                                "Value": "null"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    ],
+                    "columns": [
+                      {
+                        "value": {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Entity": "Dim_Date"
+                              }
+                            },
+                            "Property": "cal_year"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  "valueMap": [
+                    {
+                      "0": "(Blank)"
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       }
     ]
   }

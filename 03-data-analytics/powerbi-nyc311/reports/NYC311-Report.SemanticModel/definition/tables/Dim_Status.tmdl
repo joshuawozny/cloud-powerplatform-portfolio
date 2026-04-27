@@ -1,11 +1,12 @@
 table Dim_Status
-	lineageTag: 2d19ed3f-50ee-44ad-94dc-ee1f25d4b04c
+	lineageTag: 6047a40c-a4bb-4913-9782-31202056ac87
 
 	column status_key
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 36503a77-6035-4ae2-9131-5096288ff7bd
+		sourceProviderType: int
+		lineageTag: 9b5f68b0-cff2-4ddb-84d2-0a20e8448202
 		summarizeBy: none
 		sourceColumn: status_key
 
@@ -15,14 +16,15 @@ table Dim_Status
 
 	column status
 		dataType: string
-		lineageTag: 58e5a046-6a39-48a6-9230-377cf6d27423
+		sourceProviderType: varchar(8000)
+		lineageTag: c1b1bc82-9348-4f78-83a3-bd4bf2923aa5
 		summarizeBy: none
 		sourceColumn: status
 
 		annotation SummarizationSetBy = Automatic
 
 	partition Dim_Status = m
-		mode: import
+		mode: directQuery
 		queryGroup: Dimensions
 		source =
 				let

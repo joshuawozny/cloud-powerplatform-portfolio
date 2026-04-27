@@ -28,11 +28,11 @@
                       "Hierarchy": "complaint_type Hierarchy"
                     }
                   },
-                  "Level": "Complaint Type"
+                  "Level": "complaint_type"
                 }
               },
-              "queryRef": "Dim_Complaint.complaint_type Hierarchy.Complaint Type",
-              "nativeQueryRef": "complaint_type Hierarchy Complaint Type",
+              "queryRef": "Dim_Complaint.complaint_type Hierarchy.complaint_type",
+              "nativeQueryRef": "complaint_type Hierarchy complaint_type",
               "active": true
             },
             {
@@ -48,11 +48,11 @@
                       "Hierarchy": "complaint_type Hierarchy"
                     }
                   },
-                  "Level": "Descriptor"
+                  "Level": "descriptor"
                 }
               },
-              "queryRef": "Dim_Complaint.complaint_type Hierarchy.Descriptor",
-              "nativeQueryRef": "complaint_type Hierarchy Descriptor",
+              "queryRef": "Dim_Complaint.complaint_type Hierarchy.descriptor",
+              "nativeQueryRef": "complaint_type Hierarchy descriptor",
               "active": false
             }
           ]
@@ -163,7 +163,21 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "d9b38cc6c3159221ca10",
+        "name": "7876faab910d1e4b2072",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Complaints"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dd0ecdac0a054e856b30",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -176,7 +190,7 @@
                 "Hierarchy": "complaint_type Hierarchy"
               }
             },
-            "Level": "Complaint Type"
+            "Level": "complaint_type"
           }
         },
         "type": "TopN",
@@ -214,7 +228,7 @@
                               "Hierarchy": "complaint_type Hierarchy"
                             }
                           },
-                          "Level": "Complaint Type"
+                          "Level": "complaint_type"
                         },
                         "Name": "field"
                       }
@@ -263,7 +277,7 @@
                             "Hierarchy": "complaint_type Hierarchy"
                           }
                         },
-                        "Level": "Complaint Type"
+                        "Level": "complaint_type"
                       }
                     }
                   ],
@@ -279,7 +293,7 @@
         }
       },
       {
-        "name": "4bc25bd4996578c33a66",
+        "name": "11987073896e0973337b",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -292,24 +306,10 @@
                 "Hierarchy": "complaint_type Hierarchy"
               }
             },
-            "Level": "Descriptor"
+            "Level": "descriptor"
           }
         },
         "type": "Categorical"
-      },
-      {
-        "name": "526a0530970e4257247b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Complaints"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

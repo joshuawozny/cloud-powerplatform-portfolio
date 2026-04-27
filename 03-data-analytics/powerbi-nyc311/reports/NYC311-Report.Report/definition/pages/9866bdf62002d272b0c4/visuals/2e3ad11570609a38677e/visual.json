@@ -4,10 +4,10 @@
   "position": {
     "x": 650.4309954940619,
     "y": 0,
-    "z": 1,
+    "z": 1000,
     "height": 386.96527580026469,
     "width": 629.847736142984,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "lineChart",
@@ -48,71 +48,11 @@
                       "Hierarchy": "cal_year Hierarchy"
                     }
                   },
-                  "Level": "CY Quarter"
-                }
-              },
-              "queryRef": "Dim_Date.cal_year Hierarchy.CY Quarter",
-              "nativeQueryRef": "cal_year Hierarchy CY Quarter",
-              "active": false
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dim_Date"
-                        }
-                      },
-                      "Hierarchy": "cal_year Hierarchy"
-                    }
-                  },
-                  "Level": "CY Month"
-                }
-              },
-              "queryRef": "Dim_Date.cal_year Hierarchy.CY Month",
-              "nativeQueryRef": "cal_year Hierarchy CY Month",
-              "active": false
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dim_Date"
-                        }
-                      },
-                      "Hierarchy": "cal_year Hierarchy"
-                    }
-                  },
                   "Level": "Date"
                 }
               },
               "queryRef": "Dim_Date.cal_year Hierarchy.Date",
               "nativeQueryRef": "cal_year Hierarchy Date",
-              "active": false
-            },
-            {
-              "field": {
-                "HierarchyLevel": {
-                  "Expression": {
-                    "Hierarchy": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "Dim_Date"
-                        }
-                      },
-                      "Hierarchy": "cal_year Hierarchy"
-                    }
-                  },
-                  "Level": "CY Day"
-                }
-              },
-              "queryRef": "Dim_Date.cal_year Hierarchy.CY Day",
-              "nativeQueryRef": "cal_year Hierarchy CY Day",
               "active": false
             }
           ]
@@ -132,11 +72,11 @@
                       "Hierarchy": "complaint_type Hierarchy"
                     }
                   },
-                  "Level": "Complaint Type"
+                  "Level": "complaint_type"
                 }
               },
-              "queryRef": "Dim_Complaint.complaint_type Hierarchy.Complaint Type",
-              "nativeQueryRef": "complaint_type Hierarchy Complaint Type"
+              "queryRef": "Dim_Complaint.complaint_type Hierarchy.complaint_type",
+              "nativeQueryRef": "complaint_type Hierarchy complaint_type"
             }
           ]
         },
@@ -158,6 +98,29 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "HierarchyLevel": {
+                "Expression": {
+                  "Hierarchy": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Dim_Date"
+                      }
+                    },
+                    "Hierarchy": "cal_year Hierarchy"
+                  }
+                },
+                "Level": "Calendar Year"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "objects": {
@@ -418,183 +381,8 @@
         "type": "Advanced"
       },
       {
-        "name": "266ac6875012ce100e37",
+        "name": "8da2c3dd0127d2334390",
         "ordinal": 1,
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Dim_Complaint"
-                  }
-                },
-                "Hierarchy": "complaint_type Hierarchy"
-              }
-            },
-            "Level": "Complaint Type"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "Dim_Complaint",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "d"
-                              }
-                            },
-                            "Property": "complaint_type"
-                          }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "null"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'yw97y0gi2s'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'UNKNOWN'"
-                            }
-                          }
-                        ]
-                      ]
-                    }
-                  }
-                }
-              },
-              "Annotations": {
-                "filterExpressionMetadata": {
-                  "expressions": [
-                    {
-                      "HierarchyLevel": {
-                        "Expression": {
-                          "Hierarchy": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Entity": "Dim_Complaint"
-                              }
-                            },
-                            "Hierarchy": "complaint_type Hierarchy"
-                          }
-                        },
-                        "Level": "Complaint Type"
-                      }
-                    }
-                  ],
-                  "decomposedIdentities": {
-                    "values": [
-                      [
-                        {
-                          "0": [
-                            {
-                              "Literal": {
-                                "Value": "null"
-                              }
-                            }
-                          ]
-                        }
-                      ],
-                      [
-                        {
-                          "0": [
-                            {
-                              "Literal": {
-                                "Value": "'yw97y0gi2s'"
-                              }
-                            }
-                          ]
-                        }
-                      ],
-                      [
-                        {
-                          "0": [
-                            {
-                              "Literal": {
-                                "Value": "'UNKNOWN'"
-                              }
-                            }
-                          ]
-                        }
-                      ]
-                    ],
-                    "columns": [
-                      {
-                        "value": {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Entity": "Dim_Complaint"
-                              }
-                            },
-                            "Property": "complaint_type"
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  "valueMap": [
-                    {
-                      "0": "(Blank)"
-                    },
-                    {
-                      "0": "yw97y0gi2s"
-                    },
-                    {
-                      "0": "UNKNOWN"
-                    }
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      },
-      {
-        "name": "5430c77e2cd00c5ed566",
-        "ordinal": 2,
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -607,14 +395,28 @@
                 "Hierarchy": "cal_year Hierarchy"
               }
             },
-            "Level": "CY Day"
+            "Level": "Date"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "7d4f1cbfd4a2cca4d3b6",
-        "ordinal": 3,
+        "name": "21d4ff190ba1e0775888",
+        "ordinal": 2,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Complaints"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c132261237033935ab7b",
         "field": {
           "HierarchyLevel": {
             "Expression": {
@@ -627,7 +429,7 @@
                 "Hierarchy": "complaint_type Hierarchy"
               }
             },
-            "Level": "Complaint Type"
+            "Level": "complaint_type"
           }
         },
         "type": "TopN",
@@ -642,7 +444,7 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "d",
+                        "Name": "d1",
                         "Entity": "Dim_Complaint",
                         "Type": 0
                       },
@@ -659,13 +461,13 @@
                             "Hierarchy": {
                               "Expression": {
                                 "SourceRef": {
-                                  "Source": "d"
+                                  "Source": "d1"
                                 }
                               },
                               "Hierarchy": "complaint_type Hierarchy"
                             }
                           },
-                          "Level": "Complaint Type"
+                          "Level": "complaint_type"
                         },
                         "Name": "field"
                       }
@@ -692,7 +494,7 @@
               "Type": 2
             },
             {
-              "Name": "d",
+              "Name": "d1",
               "Entity": "Dim_Complaint",
               "Type": 0
             }
@@ -708,13 +510,13 @@
                           "Hierarchy": {
                             "Expression": {
                               "SourceRef": {
-                                "Source": "d"
+                                "Source": "d1"
                               }
                             },
                             "Hierarchy": "complaint_type Hierarchy"
                           }
                         },
-                        "Level": "Complaint Type"
+                        "Level": "complaint_type"
                       }
                     }
                   ],
@@ -727,83 +529,7 @@
               }
             }
           ]
-        },
-        "howCreated": "User"
-      },
-      {
-        "name": "eb00516fe068b37ed9d9",
-        "ordinal": 4,
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Dim_Date"
-                  }
-                },
-                "Hierarchy": "cal_year Hierarchy"
-              }
-            },
-            "Level": "CY Month"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "d1ec84f4c87e0bc811db",
-        "ordinal": 5,
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Dim_Date"
-                  }
-                },
-                "Hierarchy": "cal_year Hierarchy"
-              }
-            },
-            "Level": "CY Quarter"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "8da2c3dd0127d2334390",
-        "ordinal": 6,
-        "field": {
-          "HierarchyLevel": {
-            "Expression": {
-              "Hierarchy": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Dim_Date"
-                  }
-                },
-                "Hierarchy": "cal_year Hierarchy"
-              }
-            },
-            "Level": "Date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "21d4ff190ba1e0775888",
-        "ordinal": 7,
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Complaints"
-          }
-        },
-        "type": "Advanced"
+        }
       }
     ],
     "filterSortOrder": "Custom"

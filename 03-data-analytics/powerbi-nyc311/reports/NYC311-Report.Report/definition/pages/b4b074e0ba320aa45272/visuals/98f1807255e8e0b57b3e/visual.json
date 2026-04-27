@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Diim_Location"
+                      "Entity": "Dim_Location"
                     }
                   },
                   "Property": "borough"
@@ -102,7 +102,7 @@
             "zoom": {
               "expr": {
                 "Literal": {
-                  "Value": "9.73D"
+                  "Value": "9.74D"
                 }
               }
             }
@@ -250,7 +250,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Diim_Location"
+                "Entity": "Dim_Location"
               }
             },
             "Property": "borough"
@@ -262,7 +262,7 @@
           "From": [
             {
               "Name": "d",
-              "Entity": "Diim_Location",
+              "Entity": "Dim_Location",
               "Type": 0
             }
           ],
@@ -315,20 +315,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "025388c625002cc9644c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Complaints"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

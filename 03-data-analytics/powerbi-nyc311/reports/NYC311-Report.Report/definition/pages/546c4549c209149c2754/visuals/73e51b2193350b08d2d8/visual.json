@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Diim_Location"
+                      "Entity": "Dim_Location"
                     }
                   },
                   "Property": "borough"
@@ -126,7 +126,7 @@
           "From": [
             {
               "Name": "d",
-              "Entity": "Diim_Location",
+              "Entity": "Dim_Location",
               "Type": 0
             }
           ],
@@ -167,12 +167,12 @@
         "howCreated": "Exclude"
       },
       {
-        "name": "7b7631cd3d4a97231453",
+        "name": "1c3c03808bdacae4a1d2",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Diim_Location"
+                "Entity": "Dim_Location"
               }
             },
             "Property": "borough"
@@ -181,7 +181,7 @@
         "type": "Categorical"
       },
       {
-        "name": "aa4b5f305cad73522e80",
+        "name": "1006b4bb1be71cbdc806",
         "field": {
           "Measure": {
             "Expression": {

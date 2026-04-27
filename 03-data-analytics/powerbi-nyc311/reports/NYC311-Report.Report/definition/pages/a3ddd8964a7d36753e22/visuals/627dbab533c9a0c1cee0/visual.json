@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Diim_Location"
+                      "Entity": "Dim_Location"
                     }
                   },
                   "Property": "borough"
@@ -120,7 +120,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Diim_Location"
+                "Entity": "Dim_Location"
               }
             },
             "Property": "borough"
@@ -132,7 +132,7 @@
           "From": [
             {
               "Name": "d",
-              "Entity": "Diim_Location",
+              "Entity": "Dim_Location",
               "Type": 0
             }
           ],

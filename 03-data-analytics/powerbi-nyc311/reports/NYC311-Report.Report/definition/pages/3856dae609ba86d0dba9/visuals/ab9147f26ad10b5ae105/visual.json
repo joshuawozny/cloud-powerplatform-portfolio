@@ -339,20 +339,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "9e278ec88a9558e56687",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Overdue Rate"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

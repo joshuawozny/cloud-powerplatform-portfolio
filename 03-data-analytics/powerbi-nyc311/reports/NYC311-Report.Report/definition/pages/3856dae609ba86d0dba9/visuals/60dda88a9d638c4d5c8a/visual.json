@@ -308,34 +308,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "07a381a57110b2e27562",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Complaints"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "92d1115430cd75959c75",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Avg Resolution Days"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

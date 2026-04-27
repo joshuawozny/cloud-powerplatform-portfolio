@@ -1,9 +1,11 @@
 table _Measures
 	lineageTag: b9d5bc3f-1611-4c61-90ee-f9dc1499fe9d
 
-	measure 'Total Complaints' =
+	measure 'Total Complaints' = ```
 			
-			COUNTROWS(Fact_Service_Request)
+			        COUNTROWS(Fact_Service_Request)
+			    
+			```
 		formatString: 0
 		displayFolder: Core
 		lineageTag: c3f6847d-7fd9-407e-9017-ab93f1ab210f

@@ -339,20 +339,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "25e7a9b175840844bead",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Total Complaints"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

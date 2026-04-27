@@ -1,0 +1,22 @@
+DEFINE
+	VAR __DS0FilterTable = 
+		FILTER(
+			KEEPFILTERS(VALUES('Diim_Location'[borough])),
+			NOT('Diim_Location'[borough] IN {"UNSPECIFIED"})
+		)
+
+	VAR __DS0Core = 
+		SUMMARIZECOLUMNS(
+			'Diim_Location'[borough],
+			__DS0FilterTable,
+			"Total_Complaints", '_Measures'[Total Complaints]
+		)
+
+	VAR __DS0PrimaryWindowed = 
+		TOPN(1001, __DS0Core, [Total_Complaints], 0, 'Diim_Location'[borough], 1)
+
+EVALUATE
+	__DS0PrimaryWindowed
+
+ORDER BY
+	[Total_Complaints] DESC, 'Diim_Location'[borough]

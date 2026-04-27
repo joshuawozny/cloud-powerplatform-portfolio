@@ -4,10 +4,10 @@
   "position": {
     "x": 330.70436690731839,
     "y": 349.91540896832447,
-    "z": 3002,
+    "z": 5000,
     "height": 112.52181778589257,
     "width": 629.847736142984,
-    "tabOrder": 3002
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -20,7 +20,7 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Diim_Location"
+                      "Entity": "Dim_Location"
                     }
                   },
                   "Property": "borough"
@@ -120,7 +120,7 @@
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Diim_Location"
+                "Entity": "Dim_Location"
               }
             },
             "Property": "borough"
@@ -132,7 +132,7 @@
           "From": [
             {
               "Name": "d",
-              "Entity": "Diim_Location",
+              "Entity": "Dim_Location",
               "Type": 0
             }
           ],

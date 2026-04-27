@@ -1,12 +1,12 @@
 table Dim_Date
-	lineageTag: 361799fe-7089-45f4-a12d-116c28a12d5f
-	dataCategory: Time
+	lineageTag: b17ca3c6-780a-4651-81c1-8ef51725c195
 
 	column date_key
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 78008b79-0287-425e-9a46-b06ccd639f03
+		sourceProviderType: int
+		lineageTag: 118e4f81-2fdd-4d35-afc1-fba8984a01b9
 		summarizeBy: none
 		sourceColumn: date_key
 
@@ -16,9 +16,9 @@ table Dim_Date
 
 	column date
 		dataType: dateTime
-		isKey
 		formatString: Long Date
-		lineageTag: 397ce39c-5512-47a5-bb0e-359e7584bede
+		sourceProviderType: date
+		lineageTag: 5b6ce1c2-4439-4770-986e-e69cfbc5c1e0
 		summarizeBy: none
 		sourceColumn: date
 
@@ -28,9 +28,9 @@ table Dim_Date
 
 	column cal_year
 		dataType: int64
-		isHidden
 		formatString: 0
-		lineageTag: 05fb9c9c-6176-4300-824e-3e2d35cd03c1
+		sourceProviderType: int
+		lineageTag: 6a145104-2578-4708-b675-e6e8395ee1d9
 		summarizeBy: none
 		sourceColumn: cal_year
 
@@ -42,7 +42,8 @@ table Dim_Date
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 1c6f97f1-6926-4596-84bb-86546f62954d
+		sourceProviderType: int
+		lineageTag: e3fa814c-913b-4180-9db2-7ac23bb5b212
 		summarizeBy: none
 		sourceColumn: cal_quarter
 
@@ -53,7 +54,8 @@ table Dim_Date
 	column cal_quarter_label
 		dataType: string
 		isHidden
-		lineageTag: f0a6b0b4-39f6-41a0-ad80-e419428c5b02
+		sourceProviderType: varchar(8000)
+		lineageTag: 1915dc31-aa25-4827-8193-2757b6ba33a5
 		summarizeBy: none
 		sourceColumn: cal_quarter_label
 		sortByColumn: cal_quarter
@@ -66,12 +68,16 @@ table Dim_Date
 
 	column cal_year_quarter_label
 		dataType: string
-		lineageTag: 5b6addee-3abe-430d-a914-066a1ba71310
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: c0f63103-41da-4493-9403-eab0e745d242
 		summarizeBy: none
 		sourceColumn: cal_year_quarter_label
 		sortByColumn: cal_year_quarter_key
 
 		changedProperty = SortByColumn
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
@@ -79,7 +85,8 @@ table Dim_Date
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 065ed73b-b799-485d-be35-75fcab3d0b7c
+		sourceProviderType: int
+		lineageTag: fe2870fe-f073-464a-abca-f2546fc9d9f8
 		summarizeBy: none
 		sourceColumn: cal_year_quarter_key
 
@@ -91,7 +98,8 @@ table Dim_Date
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: e838fb04-7999-4fcc-8fff-2c41639d79e7
+		sourceProviderType: int
+		lineageTag: c890728b-f760-472d-9d3c-d2292d0bc11b
 		summarizeBy: none
 		sourceColumn: cal_month
 
@@ -102,7 +110,8 @@ table Dim_Date
 	column cal_month_name
 		dataType: string
 		isHidden
-		lineageTag: 432244c9-90b3-4cca-bb55-8619ebda12e6
+		sourceProviderType: varchar(8000)
+		lineageTag: 0312686c-36f9-4e46-a55e-a42c0e975cd7
 		summarizeBy: none
 		sourceColumn: cal_month_name
 		sortByColumn: cal_month
@@ -115,7 +124,8 @@ table Dim_Date
 
 	column cal_month_short
 		dataType: string
-		lineageTag: d7e409a1-9d1b-4b8f-985e-f9f32a25aaa3
+		sourceProviderType: varchar(8000)
+		lineageTag: bb15671a-d881-4b5c-be86-8ab87046bea4
 		summarizeBy: none
 		sourceColumn: cal_month_short
 		sortByColumn: cal_month
@@ -126,7 +136,8 @@ table Dim_Date
 
 	column cal_month_year_label
 		dataType: string
-		lineageTag: 7889aa9e-b453-4140-9c6c-8227e81713e1
+		sourceProviderType: varchar(8000)
+		lineageTag: 3f2d16a9-1eae-49ef-85a3-c531f4cc8a02
 		summarizeBy: none
 		sourceColumn: cal_month_year_label
 		sortByColumn: cal_year_month_key
@@ -137,7 +148,8 @@ table Dim_Date
 
 	column cal_year_month_label
 		dataType: string
-		lineageTag: 25c5c3df-c938-4e62-9c4c-273954409f52
+		sourceProviderType: varchar(8000)
+		lineageTag: f46e1ca1-9528-4586-b90a-dc68c3012aa1
 		summarizeBy: none
 		sourceColumn: cal_year_month_label
 		sortByColumn: cal_year_month_key
@@ -150,7 +162,8 @@ table Dim_Date
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 73d4a428-78a0-46d2-a65a-5781bb0c2550
+		sourceProviderType: int
+		lineageTag: 156a932b-ba3b-4a29-a746-5de684cd2d7b
 		summarizeBy: none
 		sourceColumn: cal_year_month_key
 
@@ -161,7 +174,8 @@ table Dim_Date
 	column cal_week
 		dataType: int64
 		formatString: 0
-		lineageTag: 1a10f542-78a5-4ab0-921b-4f4778593924
+		sourceProviderType: int
+		lineageTag: c28b3f04-fc4a-4205-aa6b-a5261d21511d
 		summarizeBy: none
 		sourceColumn: cal_week
 
@@ -171,7 +185,8 @@ table Dim_Date
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 7826321e-b555-457e-ae26-a23437d8aa92
+		sourceProviderType: int
+		lineageTag: 48593f0d-d3ee-4450-a1eb-c30f9694d959
 		summarizeBy: none
 		sourceColumn: cal_day_of_week
 
@@ -181,18 +196,23 @@ table Dim_Date
 
 	column cal_day_name
 		dataType: string
-		lineageTag: c49594ea-9a0f-4594-b4ca-18d13b4e690a
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 87efd020-ce01-420d-9245-92448976c9bf
 		summarizeBy: none
 		sourceColumn: cal_day_name
 		sortByColumn: cal_day_of_week
 
 		changedProperty = SortByColumn
 
+		changedProperty = IsHidden
+
 		annotation SummarizationSetBy = Automatic
 
 	column cal_day_short
 		dataType: string
-		lineageTag: 7de0fb99-c70f-426c-92b3-c6a85918a916
+		sourceProviderType: varchar(8000)
+		lineageTag: 4eead67c-8879-4dc7-9f75-5e862e492a33
 		summarizeBy: none
 		sourceColumn: cal_day_short
 		sortByColumn: cal_day_of_week
@@ -204,7 +224,8 @@ table Dim_Date
 	column day_of_month
 		dataType: int64
 		formatString: 0
-		lineageTag: a173c7ca-691a-47f0-aa55-f4da1885def6
+		sourceProviderType: int
+		lineageTag: 13ef1556-a3aa-4bb6-93eb-ac798419d795
 		summarizeBy: none
 		sourceColumn: day_of_month
 
@@ -213,7 +234,8 @@ table Dim_Date
 	column day_of_year
 		dataType: int64
 		formatString: 0
-		lineageTag: ec500812-dc7b-4bd4-9332-b796c8ab4a4b
+		sourceProviderType: int
+		lineageTag: 50e968d6-d144-4c84-bb12-41c5f39209ad
 		summarizeBy: none
 		sourceColumn: day_of_year
 
@@ -222,7 +244,8 @@ table Dim_Date
 	column is_weekend
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: a4a28dc8-4e37-47df-8d4c-ccb2f1556095
+		sourceProviderType: bit
+		lineageTag: bfb37fd1-c0c4-4088-a88f-36716b3375f8
 		summarizeBy: none
 		sourceColumn: is_weekend
 
@@ -231,7 +254,8 @@ table Dim_Date
 	column is_month_start
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: fe3a6f22-6d79-497e-9635-17e862f8dcd4
+		sourceProviderType: bit
+		lineageTag: 35fa369a-15dd-4d31-b48e-88711adc39a9
 		summarizeBy: none
 		sourceColumn: is_month_start
 
@@ -240,7 +264,8 @@ table Dim_Date
 	column is_month_end
 		dataType: boolean
 		formatString: """TRUE"";""TRUE"";""FALSE"""
-		lineageTag: ccd2cddf-25c5-4243-9c40-dee83abfbb8d
+		sourceProviderType: bit
+		lineageTag: 2803131d-23e0-42be-a0dc-a06e0bb41a86
 		summarizeBy: none
 		sourceColumn: is_month_end
 
@@ -250,7 +275,8 @@ table Dim_Date
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 6daa08e3-2cc7-46e0-bf92-0cb21ca6b118
+		sourceProviderType: int
+		lineageTag: 32ab4ff1-c24b-4fc7-b17a-53af795962dc
 		summarizeBy: none
 		sourceColumn: fy_year
 		sortByColumn: fy_year_key
@@ -264,7 +290,8 @@ table Dim_Date
 	column fy_label
 		dataType: string
 		isHidden
-		lineageTag: 83b62a54-c0d5-4f0e-90da-13540054af07
+		sourceProviderType: varchar(8000)
+		lineageTag: 8d28d998-2948-4fa2-97e0-9e8d3a7c9b19
 		summarizeBy: none
 		sourceColumn: fy_label
 		sortByColumn: fy_year
@@ -279,7 +306,8 @@ table Dim_Date
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 93e5a0ca-e716-417e-b81e-ceb1d53d4174
+		sourceProviderType: int
+		lineageTag: 10e3faa3-5f50-42b4-b08b-4a9894f817e5
 		summarizeBy: none
 		sourceColumn: fy_quarter
 
@@ -289,11 +317,21 @@ table Dim_Date
 
 	column fy_quarter_label
 		dataType: string
-		isHidden
-		lineageTag: a8697eaa-b2e8-4898-9a23-48048ce7a499
+		sourceProviderType: varchar(8000)
+		lineageTag: f76f41e1-0519-4f60-a7f2-8288ac2d4980
 		summarizeBy: none
 		sourceColumn: fy_quarter_label
-		sortByColumn: fy_quarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column fy_year_quarter_label
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 73772a7d-aa2b-481a-91ed-1b60ca4c0503
+		summarizeBy: none
+		sourceColumn: fy_year_quarter_label
+		sortByColumn: fy_year_quarter_key
 
 		changedProperty = SortByColumn
 
@@ -301,22 +339,12 @@ table Dim_Date
 
 		annotation SummarizationSetBy = Automatic
 
-	column fy_year_quarter_label
-		dataType: string
-		lineageTag: 3e05a23c-75a9-4128-a526-ff7b2e4cfe16
-		summarizeBy: none
-		sourceColumn: fy_year_quarter_label
-		sortByColumn: fy_year_quarter_key
-
-		changedProperty = SortByColumn
-
-		annotation SummarizationSetBy = Automatic
-
 	column fy_year_quarter_key
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 5078d287-b8f9-4a60-b1d5-2df4a015adc4
+		sourceProviderType: int
+		lineageTag: f0978064-781e-4388-8fb6-a70792ae0ad8
 		summarizeBy: none
 		sourceColumn: fy_year_quarter_key
 
@@ -328,7 +356,8 @@ table Dim_Date
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 6cb80792-dc7b-4667-9060-b210fe751dab
+		sourceProviderType: int
+		lineageTag: 5573a810-2176-4a3a-a98b-7b449261b1f4
 		summarizeBy: none
 		sourceColumn: fy_month
 
@@ -338,20 +367,19 @@ table Dim_Date
 
 	column fy_week
 		dataType: int64
-		isHidden
 		formatString: 0
-		lineageTag: b841a01e-4dc0-4d92-9ec1-8d2762aa8e93
+		sourceProviderType: int
+		lineageTag: 692660ba-becd-4fe5-9743-4e4154c16976
 		summarizeBy: none
 		sourceColumn: fy_week
-
-		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column fy_year_month_label
 		dataType: string
 		isHidden
-		lineageTag: f33d1bec-f616-466f-817d-5ebb35d203cf
+		sourceProviderType: varchar(8000)
+		lineageTag: 0de53528-56ee-443f-9bb0-c9ad054ed479
 		summarizeBy: none
 		sourceColumn: fy_year_month_label
 		sortByColumn: fy_year_month_key
@@ -366,7 +394,8 @@ table Dim_Date
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: ab85f0f7-b092-4b8c-80d7-97167edf8fd3
+		sourceProviderType: int
+		lineageTag: c8ce53c8-74bb-49b1-b76b-b3e9a311e8dc
 		summarizeBy: none
 		sourceColumn: fy_year_month_key
 
@@ -378,7 +407,8 @@ table Dim_Date
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 093c6bda-37e2-4932-a78a-a701a86466ef
+		sourceProviderType: int
+		lineageTag: e9e3b84b-d62d-41a8-95f8-0be0080a5e3f
 		summarizeBy: none
 		sourceColumn: fy_year_key
 
@@ -386,62 +416,46 @@ table Dim_Date
 
 		annotation SummarizationSetBy = Automatic
 
-	column fy_month_label = Dim_Date[fy_year_month_label]&" (" & Dim_Date[cal_month_name] &")"
-		isHidden
-		lineageTag: c025662b-29a9-48ef-82e1-d65ef48dddb9
-		summarizeBy: none
-		sortByColumn: fy_month
-
-		changedProperty = SortByColumn
-
-		changedProperty = IsHidden
-
-		annotation SummarizationSetBy = Automatic
-
 	hierarchy 'cal_year Hierarchy'
-		lineageTag: ade5a871-b38e-4d0e-ac04-a0b69c75380e
+		lineageTag: d9c8f52c-9481-40ec-b6f4-c60802d193c7
 
 		level 'Calendar Year'
-			lineageTag: 533ed8b4-023b-4ecb-b60c-a35c0929587a
+			lineageTag: 58f1e03e-2479-4418-8869-62f21ab84b0a
 			column: cal_year
 
-		level 'CY Quarter'
-			lineageTag: f2a615fe-f698-4352-abed-2af3da67c497
+		level 'Calendar Quarter'
+			lineageTag: 9ba1a1d6-796f-4f44-81b5-8e16a293830b
 			column: cal_quarter_label
 
-		level 'CY Month'
-			lineageTag: 4b0b7700-e5a9-4c04-a27b-cde78e5f1988
-			column: cal_month_year_label
+		level Month
+			lineageTag: be6d5dbc-cc54-49a2-857c-1ecb5610b8be
+			column: cal_month_name
 
-		level Date
-			lineageTag: e2cc4fad-a288-4e74-b830-93661943ec71
-			column: date
-
-		level 'CY Day'
-			lineageTag: dc7f4ad3-a2e0-429a-81d9-f8dcfa62dc51
+		level 'Day of Week'
+			lineageTag: dbab051e-1a7e-4869-9fe1-359dd5efbf22
 			column: cal_day_name
 
+		level Date
+			lineageTag: 69c1a2e2-6f4f-4da5-9a72-a0b631fb22ef
+			column: date
+
 	hierarchy 'fy_year Hierarchy'
-		lineageTag: 69577326-afda-477a-bea0-cd8354800188
+		lineageTag: c655249c-d57c-459f-998b-9791383aff56
 
 		level fy_label
-			lineageTag: b72f6270-f44b-465f-9acf-17b03c3ff2b3
+			lineageTag: 2069af1f-8d46-4ea5-8f38-0f9f9dabf4f5
 			column: fy_label
 
-		level fy_quarter_label
-			lineageTag: d63da8d2-f467-4696-b89d-d262cadfe350
-			column: fy_quarter_label
+		level fy_year_quarter_label
+			lineageTag: c2a20d51-1a4f-4b70-82d5-f854a5406d9f
+			column: fy_year_quarter_label
 
-		level fy_month_label
-			lineageTag: 260338f8-ed15-4705-8a1f-f1bc8d1f0c01
-			column: fy_month_label
-
-		level fy_week
-			lineageTag: 277a505e-18b6-4144-a063-0aefa1909cb4
-			column: fy_week
+		level fy_year_month_label
+			lineageTag: e5f9accd-5999-491c-9afe-c19a07923c10
+			column: fy_year_month_label
 
 	partition Dim_Date = m
-		mode: import
+		mode: dual
 		queryGroup: Dimensions
 		source =
 				let

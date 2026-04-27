@@ -1,0 +1,85 @@
+table Dim_Location
+	lineageTag: 9dce7631-7644-459a-8e75-ee634098ea81
+
+	column location_key
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 00cf3bbd-382b-4677-b39b-78246d81babd
+		summarizeBy: none
+		sourceColumn: location_key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column borough
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4d9e394d-bd3e-48be-8e33-fb9cb111c0c7
+		summarizeBy: none
+		sourceColumn: borough
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1e9d4a8d-8717-462d-bcae-a827dcd2dffc
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: 478cf713-e97d-4251-9df0-2a9681780959
+		summarizeBy: none
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		sourceProviderType: float
+		lineageTag: f7b11d85-0cd7-42eb-a721-69b7ee8dc405
+		summarizeBy: none
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	hierarchy 'borough Hierarchy'
+		lineageTag: fdd60f46-11b2-4c19-beac-be595ffc9033
+
+		level borough
+			lineageTag: 05283089-78dd-43d8-8655-9b23b53a7d54
+			column: borough
+
+		level city
+			lineageTag: f7166633-7af9-4cf6-8d43-709e8c927d99
+			column: city
+
+		level location_key
+			lineageTag: df637db0-2f32-4880-a539-96178f31e050
+			column: location_key
+
+	partition Dim_Location = m
+		mode: dual
+		queryGroup: Dimensions
+		source =
+				let
+				    Source = Sql.Database("t52pq5prlkturgp6ra5mlc3vqa-ooolzdhsejqufjqk5gl7v4lqx4.datawarehouse.fabric.microsoft.com", "NYC311_Lakehouse"),
+				    dbo_gold_dim_location = Source{[Schema="dbo",Item="gold_dim_location"]}[Data]
+				in
+				    dbo_gold_dim_location
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

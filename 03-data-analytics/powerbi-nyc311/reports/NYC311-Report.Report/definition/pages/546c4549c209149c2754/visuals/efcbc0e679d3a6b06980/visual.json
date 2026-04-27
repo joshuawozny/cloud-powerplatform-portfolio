@@ -111,5 +111,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "9a9679b46c2ecddc93a5",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Avg Resolution Days"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

@@ -18,20 +18,28 @@ queryGroup Facts
 
 	annotation PBI_QueryGroupOrder = 2
 
+queryGroup OLD
+
+	annotation PBI_QueryGroupOrder = 3
+
+queryGroup Aggregates
+
+	annotation PBI_QueryGroupOrder = 4
+
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_ProTooling = ["DevMode"]
+annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop"]
 
-annotation PBI_QueryOrder = ["_Measures","RangeStart","RangeEnd","Dim_Agency","Dim_Complaint","Dim_Date","Diim_Location","Dim_Status","Fact_Service_Request","Last_Refresh_DateTime","isDevMode"]
+annotation PBI_QueryOrder = ["_Measures","Dim_Agency","Dim_Complaint","Dim_Date","Dim_Location","Dim_Status","RangeStart","RangeEnd","isDevMode","Fact_Service_Request_Old","Dim_Agency_Old","Dim_Complaint_Old","Dim_Date_Old","Diim_Location_Old","Dim_Status_Old","Last_Refresh_DateTime","Fact_Service_Request"]
 
 ref table _Measures
+ref table Last_Refresh_DateTime
 ref table Dim_Agency
 ref table Dim_Complaint
 ref table Dim_Date
-ref table Diim_Location
+ref table Dim_Location
 ref table Dim_Status
 ref table Fact_Service_Request
-ref table Last_Refresh_DateTime
 
 ref cultureInfo en-US
 

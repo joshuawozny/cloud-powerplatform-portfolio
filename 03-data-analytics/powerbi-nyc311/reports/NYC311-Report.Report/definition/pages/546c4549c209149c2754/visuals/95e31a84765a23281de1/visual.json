@@ -111,5 +111,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8f85f1f74ed5cb87dcc1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Open Complaints"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

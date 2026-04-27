@@ -1,6 +1,6 @@
 expression RangeStart = #datetime(2010, 1, 1, 0, 0, 0) meta [IsParameterQuery=true, Type="DateTime", IsParameterQueryRequired=true]
 	lineageTag: 5cea174a-a746-4c65-a7c8-5326a79b7511
-	queryGroup: Dates
+	queryGroup: OLD
 
 	annotation PBI_NavigationStepName = Navigation
 
@@ -8,7 +8,7 @@ expression RangeStart = #datetime(2010, 1, 1, 0, 0, 0) meta [IsParameterQuery=tr
 
 expression RangeEnd = #datetime(2026, 4, 22, 0, 0, 0) meta [IsParameterQuery=true, Type="DateTime", IsParameterQueryRequired=true]
 	lineageTag: 71310a51-219c-4b15-b0ce-37c899d3b51c
-	queryGroup: Dates
+	queryGroup: OLD
 
 	annotation PBI_NavigationStepName = Navigation
 
@@ -16,8 +16,90 @@ expression RangeEnd = #datetime(2026, 4, 22, 0, 0, 0) meta [IsParameterQuery=tru
 
 expression isDevMode = true meta [IsParameterQuery=true, Type="Logical", IsParameterQueryRequired=true]
 	lineageTag: f273a386-7639-4ea8-81f4-ac1230d8a4f4
+	queryGroup: OLD
 
 	annotation PBI_NavigationStepName = Navigation
 
 	annotation PBI_ResultType = Logical
+
+expression Fact_Service_Request_Old =
+		let
+		    Source = Sql.Database("t52pq5prlkturgp6ra5mlc3vqa-ooolzdhsejqufjqk5gl7v4lqx4.datawarehouse.fabric.microsoft.com", "NYC311_Lakehouse"),
+		    dbo_gold_fact_service_request = Source{[Schema="dbo",Item="gold_fact_service_request"]}[Data],
+		    #"Filtered Rows" = Table.SelectRows(dbo_gold_fact_service_request, each [created_date] >= RangeStart and [created_date] < RangeEnd),
+		    #"Dev Mode Filter" = if isDevMode = true then Table.FirstN(#"Filtered Rows", 10000) else #"Filtered Rows"
+		in
+		    #"Dev Mode Filter"
+	lineageTag: e68ae7f4-7bba-40a0-b073-362c8aa105fc
+	queryGroup: OLD
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Dim_Agency_Old =
+		let
+		    Source = Sql.Database("t52pq5prlkturgp6ra5mlc3vqa-ooolzdhsejqufjqk5gl7v4lqx4.datawarehouse.fabric.microsoft.com", "NYC311_Lakehouse"),
+		    dbo_gold_dim_agency = Source{[Schema="dbo",Item="gold_dim_agency"]}[Data]
+		in
+		    dbo_gold_dim_agency
+	lineageTag: e8c8e246-971b-4104-ba3a-f7e42d95a12b
+	queryGroup: OLD
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Dim_Complaint_Old =
+		let
+		    Source = Sql.Database("t52pq5prlkturgp6ra5mlc3vqa-ooolzdhsejqufjqk5gl7v4lqx4.datawarehouse.fabric.microsoft.com", "NYC311_Lakehouse"),
+		    dbo_gold_dim_complaint = Source{[Schema="dbo",Item="gold_dim_complaint"]}[Data]
+		in
+		    dbo_gold_dim_complaint
+	lineageTag: fe6fc83a-f9a1-4c98-bd07-1a005c4552cc
+	queryGroup: OLD
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Dim_Date_Old =
+		let
+		    Source = Sql.Database("t52pq5prlkturgp6ra5mlc3vqa-ooolzdhsejqufjqk5gl7v4lqx4.datawarehouse.fabric.microsoft.com", "NYC311_Lakehouse"),
+		    dbo_gold_dim_date = Source{[Schema="dbo",Item="gold_dim_date"]}[Data]
+		in
+		    dbo_gold_dim_date
+	lineageTag: ef234adf-0704-4d74-9e56-3a4cd399ba72
+	queryGroup: OLD
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Diim_Location_Old =
+		let
+		    Source = Sql.Database("t52pq5prlkturgp6ra5mlc3vqa-ooolzdhsejqufjqk5gl7v4lqx4.datawarehouse.fabric.microsoft.com", "NYC311_Lakehouse"),
+		    dbo_gold_dim_location = Source{[Schema="dbo",Item="gold_dim_location"]}[Data],
+		    #"Removed Columns" = Table.RemoveColumns(dbo_gold_dim_location,{"city"})
+		in
+		    #"Removed Columns"
+	lineageTag: fe0ec435-63a8-441a-8b4f-f5218448410a
+	queryGroup: OLD
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Dim_Status_Old =
+		let
+		    Source = Sql.Database("t52pq5prlkturgp6ra5mlc3vqa-ooolzdhsejqufjqk5gl7v4lqx4.datawarehouse.fabric.microsoft.com", "NYC311_Lakehouse"),
+		    dbo_gold_dim_status = Source{[Schema="dbo",Item="gold_dim_status"]}[Data]
+		in
+		    dbo_gold_dim_status
+	lineageTag: 6d6118e5-72b9-4c64-8199-cfbb6598a1c4
+	queryGroup: OLD
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

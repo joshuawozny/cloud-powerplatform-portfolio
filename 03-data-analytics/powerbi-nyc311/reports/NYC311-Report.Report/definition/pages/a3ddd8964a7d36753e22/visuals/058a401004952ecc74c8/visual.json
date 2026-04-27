@@ -28,11 +28,11 @@
                       "Hierarchy": "complaint_type Hierarchy"
                     }
                   },
-                  "Level": "Complaint Type"
+                  "Level": "complaint_type"
                 }
               },
-              "queryRef": "Dim_Complaint.complaint_type Hierarchy.Complaint Type",
-              "nativeQueryRef": "complaint_type Hierarchy Complaint Type",
+              "queryRef": "Dim_Complaint.complaint_type Hierarchy.complaint_type",
+              "nativeQueryRef": "complaint_type Hierarchy complaint_type",
               "active": true
             },
             {
@@ -48,11 +48,11 @@
                       "Hierarchy": "complaint_type Hierarchy"
                     }
                   },
-                  "Level": "Descriptor"
+                  "Level": "descriptor"
                 }
               },
-              "queryRef": "Dim_Complaint.complaint_type Hierarchy.Descriptor",
-              "nativeQueryRef": "complaint_type Hierarchy Descriptor",
+              "queryRef": "Dim_Complaint.complaint_type Hierarchy.descriptor",
+              "nativeQueryRef": "complaint_type Hierarchy descriptor",
               "active": false
             }
           ]
@@ -115,5 +115,47 @@
       "filterChanges": true
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "78356bf6e88a01215180",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_Complaint"
+                  }
+                },
+                "Hierarchy": "complaint_type Hierarchy"
+              }
+            },
+            "Level": "complaint_type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9623114e001658d6d1cc",
+        "field": {
+          "HierarchyLevel": {
+            "Expression": {
+              "Hierarchy": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Dim_Complaint"
+                  }
+                },
+                "Hierarchy": "complaint_type Hierarchy"
+              }
+            },
+            "Level": "descriptor"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

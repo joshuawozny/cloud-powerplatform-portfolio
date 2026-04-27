@@ -339,20 +339,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "e7c4310238a62ee44c84",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Avg Resolution Days"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

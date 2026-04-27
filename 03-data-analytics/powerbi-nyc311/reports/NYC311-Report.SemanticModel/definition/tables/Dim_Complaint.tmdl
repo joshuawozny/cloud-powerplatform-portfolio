@@ -1,11 +1,12 @@
 table Dim_Complaint
-	lineageTag: e5b22640-025d-40db-94bb-c25a5274c7f0
+	lineageTag: a539f406-30a6-4f9d-aca2-867a4364ee56
 
 	column complaint_key
 		dataType: int64
 		isHidden
 		formatString: 0
-		lineageTag: 86e15136-732a-4542-ac58-26a986091470
+		sourceProviderType: int
+		lineageTag: 74c31089-b726-4fa8-9b3a-2f4e367d2293
 		summarizeBy: none
 		sourceColumn: complaint_key
 
@@ -16,7 +17,8 @@ table Dim_Complaint
 	column complaint_type
 		dataType: string
 		isHidden
-		lineageTag: d205646e-97b1-4b27-8296-b57fa97c5219
+		sourceProviderType: varchar(8000)
+		lineageTag: dccb8b4e-30c8-4a51-8788-30beb734eda6
 		summarizeBy: none
 		sourceColumn: complaint_type
 
@@ -26,28 +28,26 @@ table Dim_Complaint
 
 	column descriptor
 		dataType: string
-		isHidden
-		lineageTag: 9da8480b-5720-4f88-b596-04238d585eaa
+		sourceProviderType: varchar(8000)
+		lineageTag: 5cafddcb-acc8-4f05-91a4-97a1cc387534
 		summarizeBy: none
 		sourceColumn: descriptor
-
-		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	hierarchy 'complaint_type Hierarchy'
-		lineageTag: 43c0e3ff-78e4-4baa-93c2-26f4c5267785
+		lineageTag: 51431543-4e79-4d20-b301-887be80b88b5
 
-		level 'Complaint Type'
-			lineageTag: 118e0c0c-2736-4c86-970c-2bfdf064dbcb
+		level complaint_type
+			lineageTag: dcc21d4f-8193-48f0-845d-3baf14b9a72c
 			column: complaint_type
 
-		level Descriptor
-			lineageTag: 91b8c08d-a29e-424c-b0b1-d03ab010426d
+		level descriptor
+			lineageTag: ab448bf9-ffb0-4128-821f-1c0b265a8346
 			column: descriptor
 
 	partition Dim_Complaint = m
-		mode: import
+		mode: dual
 		queryGroup: Dimensions
 		source =
 				let

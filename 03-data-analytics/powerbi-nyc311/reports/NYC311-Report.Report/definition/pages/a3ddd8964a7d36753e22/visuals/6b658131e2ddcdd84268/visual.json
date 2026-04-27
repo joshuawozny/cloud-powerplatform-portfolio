@@ -103,37 +103,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c8ad793885a7bda0928b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Date"
-              }
-            },
-            "Property": "cal_month_short"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "5e6fae018b13038bd8d5",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Avg Monthly Complaints"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

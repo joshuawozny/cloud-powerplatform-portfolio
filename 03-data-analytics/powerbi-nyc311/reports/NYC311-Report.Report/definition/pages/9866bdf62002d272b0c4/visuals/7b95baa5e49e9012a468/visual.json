@@ -4,10 +4,10 @@
   "position": {
     "x": 325.21549774703095,
     "y": 500.85931087622913,
-    "z": 5,
+    "z": 5000,
     "height": 107.03294862560513,
     "width": 314.23775942645608,
-    "tabOrder": 5
+    "tabOrder": 5000
   },
   "visual": {
     "visualType": "slicer",
@@ -85,23 +85,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "a1e7d6b8069994edd548",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim_Status"
-              }
-            },
-            "Property": "status"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

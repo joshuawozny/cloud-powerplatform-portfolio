@@ -1,0 +1,98 @@
+table gold_agg_date_complaint
+	lineageTag: 85f74442-c679-484d-98a1-2ba08a6ae499
+
+	column date_key_created
+		dataType: int64
+		formatString: 0
+		lineageTag: 67f6f62e-9b4a-4c22-9b2e-f6ccb92cd0d1
+		summarizeBy: none
+		sourceColumn: date_key_created
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column complaint_key
+		dataType: int64
+		formatString: 0
+		lineageTag: e0c14711-34b4-45db-aaa4-385f7ee9939c
+		summarizeBy: none
+		sourceColumn: complaint_key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_complaints
+		dataType: int64
+		formatString: 0
+		lineageTag: 57aa26f9-75d6-40de-ab57-89e906023c05
+		summarizeBy: sum
+		sourceColumn: total_complaints
+
+		alternateOf
+			summarization: count
+			baseTable: Fact_Service_Request
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column overdue_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 22bc6cbe-e8e0-4725-ae22-2bb99afeb6d6
+		summarizeBy: sum
+		sourceColumn: overdue_count
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column sum_resolution_hours
+		dataType: double
+		lineageTag: 7d008286-da6f-4d6e-91e4-fa3a96c75be7
+		summarizeBy: sum
+		sourceColumn: sum_resolution_hours
+
+		alternateOf
+			summarization: sum
+			baseColumn: Fact_Service_Request.resolution_hours
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column count_resolution_hours
+		dataType: int64
+		formatString: 0
+		lineageTag: 60259160-b02e-46bd-989e-8d393bd2e167
+		summarizeBy: sum
+		sourceColumn: count_resolution_hours
+
+		alternateOf
+			summarization: count
+			baseColumn: Fact_Service_Request.unique_key
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_agg_date_complaint = m
+		mode: import
+		queryGroup: Aggregates
+		source =
+				let
+				    Source = Sql.Database("t52pq5prlkturgp6ra5mlc3vqa-ooolzdhsejqufjqk5gl7v4lqx4.datawarehouse.fabric.microsoft.com", "NYC311_Lakehouse"),
+				    dbo_gold_agg_date_complaint = Source{[Schema="dbo",Item="gold_agg_date_complaint"]}[Data]
+				in
+				    dbo_gold_agg_date_complaint
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

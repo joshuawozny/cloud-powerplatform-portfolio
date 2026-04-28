@@ -30,7 +30,7 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop"]
 
-annotation PBI_QueryOrder = ["_Measures","Dim_Agency","Dim_Complaint","Dim_Date","Dim_Location","Dim_Status","RangeStart","RangeEnd","isDevMode","Fact_Service_Request_Old","Dim_Agency_Old","Dim_Complaint_Old","Dim_Date_Old","Diim_Location_Old","Dim_Status_Old","Last_Refresh_DateTime","Fact_Service_Request"]
+annotation PBI_QueryOrder = ["_Measures","Dim_Agency","Dim_Complaint","Dim_Date","Dim_Location","Dim_Status","RangeStart","RangeEnd","isDevMode","Fact_Service_Request_Old","Dim_Agency_Old","Dim_Complaint_Old","Dim_Date_Old","Diim_Location_Old","Dim_Status_Old","Last_Refresh_DateTime","Fact_Service_Request","gold_agg_date_borough","gold_agg_date_complaint"]
 
 ref table _Measures
 ref table Last_Refresh_DateTime
@@ -40,6 +40,8 @@ ref table Dim_Date
 ref table Dim_Location
 ref table Dim_Status
 ref table Fact_Service_Request
+ref table gold_agg_date_borough
+ref table gold_agg_date_complaint
 
 ref cultureInfo en-US
 

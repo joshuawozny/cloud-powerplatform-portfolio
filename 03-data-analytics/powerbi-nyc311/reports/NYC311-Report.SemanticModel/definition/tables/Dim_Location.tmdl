@@ -36,7 +36,7 @@ table Dim_Location
 		dataType: double
 		sourceProviderType: float
 		lineageTag: 478cf713-e97d-4251-9df0-2a9681780959
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: latitude
 
 		annotation SummarizationSetBy = Automatic
@@ -47,7 +47,7 @@ table Dim_Location
 		dataType: double
 		sourceProviderType: float
 		lineageTag: f7b11d85-0cd7-42eb-a721-69b7ee8dc405
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: longitude
 
 		annotation SummarizationSetBy = Automatic

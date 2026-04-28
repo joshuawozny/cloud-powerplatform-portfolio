@@ -31,7 +31,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 6a145104-2578-4708-b675-e6e8395ee1d9
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: cal_year
 
 		changedProperty = IsHidden
@@ -44,7 +44,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: e3fa814c-913b-4180-9db2-7ac23bb5b212
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: cal_quarter
 
 		changedProperty = IsHidden
@@ -87,7 +87,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: fe2870fe-f073-464a-abca-f2546fc9d9f8
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: cal_year_quarter_key
 
 		changedProperty = IsHidden
@@ -100,7 +100,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: c890728b-f760-472d-9d3c-d2292d0bc11b
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: cal_month
 
 		changedProperty = IsHidden
@@ -164,7 +164,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 156a932b-ba3b-4a29-a746-5de684cd2d7b
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: cal_year_month_key
 
 		changedProperty = IsHidden
@@ -176,7 +176,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: c28b3f04-fc4a-4205-aa6b-a5261d21511d
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: cal_week
 
 		annotation SummarizationSetBy = Automatic
@@ -187,7 +187,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 48593f0d-d3ee-4450-a1eb-c30f9694d959
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: cal_day_of_week
 
 		changedProperty = IsHidden
@@ -226,7 +226,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 13ef1556-a3aa-4bb6-93eb-ac798419d795
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: day_of_month
 
 		annotation SummarizationSetBy = Automatic
@@ -236,7 +236,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 50e968d6-d144-4c84-bb12-41c5f39209ad
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: day_of_year
 
 		annotation SummarizationSetBy = Automatic
@@ -277,7 +277,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 32ab4ff1-c24b-4fc7-b17a-53af795962dc
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: fy_year
 		sortByColumn: fy_year_key
 
@@ -308,7 +308,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 10e3faa3-5f50-42b4-b08b-4a9894f817e5
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: fy_quarter
 
 		changedProperty = IsHidden
@@ -345,7 +345,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: f0978064-781e-4388-8fb6-a70792ae0ad8
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: fy_year_quarter_key
 
 		changedProperty = IsHidden
@@ -358,7 +358,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 5573a810-2176-4a3a-a98b-7b449261b1f4
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: fy_month
 
 		changedProperty = IsHidden
@@ -370,7 +370,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: 692660ba-becd-4fe5-9743-4e4154c16976
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: fy_week
 
 		annotation SummarizationSetBy = Automatic
@@ -396,7 +396,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: c8ce53c8-74bb-49b1-b76b-b3e9a311e8dc
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: fy_year_month_key
 
 		changedProperty = IsHidden
@@ -409,7 +409,7 @@ table Dim_Date
 		formatString: 0
 		sourceProviderType: int
 		lineageTag: e9e3b84b-d62d-41a8-95f8-0be0080a5e3f
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: fy_year_key
 
 		changedProperty = IsHidden

@@ -1,0 +1,15 @@
+DEFINE
+	VAR __DS0Core = 
+		SUMMARIZECOLUMNS(
+			'Dim_Complaint'[complaint_type],
+			"Total_Complaints", '_Measures'[Total Complaints]
+		)
+
+	VAR __DS0PrimaryWindowed = 
+		TOPN(1001, __DS0Core, [Total_Complaints], 0, 'Dim_Complaint'[complaint_type], 1)
+
+EVALUATE
+	__DS0PrimaryWindowed
+
+ORDER BY
+	[Total_Complaints] DESC, 'Dim_Complaint'[complaint_type]

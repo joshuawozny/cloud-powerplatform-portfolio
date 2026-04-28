@@ -24,7 +24,7 @@ table Dim_Status
 		annotation SummarizationSetBy = Automatic
 
 	partition Dim_Status = m
-		mode: directQuery
+		mode: dual
 		queryGroup: Dimensions
 		source =
 				let

@@ -33,3 +33,19 @@ relationship 83749265-9227-bb89-2dc3-0c774fdad926
 	fromColumn: Fact_Service_Request.date_key_updated
 	toColumn: Dim_Date.date_key
 
+relationship 66827ac2-9c2f-1a42-2366-ac79fc4568b3
+	fromColumn: gold_agg_date_borough.date_key_created
+	toColumn: Dim_Date.date_key
+
+relationship 7e95d391-a33e-6f63-da1a-745cc9e50d3d
+	fromColumn: gold_agg_date_complaint.date_key_created
+	toColumn: Dim_Date.date_key
+
+relationship a75df1bf-389f-87dd-9f9f-0df190d776c5
+	fromColumn: gold_agg_date_borough.location_key
+	toColumn: Dim_Location.location_key
+
+relationship eb3b11a4-68f6-663c-3d95-7fa43a76c11d
+	fromColumn: gold_agg_date_complaint.complaint_key
+	toColumn: Dim_Complaint.complaint_key
+

@@ -57,7 +57,7 @@ Full platform documentation: [`../../docs/lakehouse-architecture.md`](../../docs
 
 ## 📊 Data Model
 
-![NYC311 Semantic Model Diagram](./screenshots/NYC311-model-diagram.png)
+![NYC311 Semantic Model Diagram](./screenshots/00_model_diagram.png)
 
 ### Fact Table — `Fact_Service_Request` (DirectQuery)
 
@@ -142,7 +142,7 @@ All 19 measures are housed in the `_Measures` table. Full definitions in [`./dax
 
 ## 📈 Visuals & Report Pages
 
-**Page 1 — Executive Summary**
+**Page 1 — Overview**
 - KPI cards: Total Complaints, Open Complaints, Overdue Rate, Avg Resolution Days
 - Monthly complaint volume trend with YoY overlay
 - Top complaint types (bar chart)
@@ -153,16 +153,20 @@ All 19 measures are housed in the `_Measures` table. Full definitions in [`./dax
 - Avg Resolution Days by agency
 - Drill-through to complaint-level detail
 
-**Page 3 — Geographic Analysis**
-- Map visual using Dim_Location latitude/longitude
-- Borough Hierarchy drill-down
-- Complaint type concentration by area
+**Page 3 — Complaint Analysis**
+- Complaint type and descriptor breakdown using Dim_Complaint hierarchy
+- Volume and overdue rate by complaint category
+- Complaint Type Hierarchy drill-down
 
-**Page 4 — Trend Analysis**
+**Page 4 — Trends**
 - YTD, QTD, MTD complaint volume
 - YoY Change % trend line
-- Complaint Type Hierarchy drill-down
-- Submission channel and status breakdowns
+- Period-over-period comparisons using CY and FY time intelligence measures
+
+**Page 5 — Geography**
+- Map visual using Dim_Location latitude/longitude
+- Borough Hierarchy drill-down
+- Complaint concentration by location
 
 ---
 
@@ -173,6 +177,8 @@ All 19 measures are housed in the `_Measures` table. Full definitions in [`./dax
 **Tabular Editor 3** — used for bulk DAX measure authoring across the `_Measures` table, Best Practice Analyzer runs, TMDL review of Git-serialized model definitions, and annotation management via XMLA endpoint.
 
 **Power BI Desktop (PBIP format)** — the `.pbip` project format enables Git-friendly version control of the report and semantic model as readable JSON and TMDL files rather than opaque `.pbix` binary.
+
+**NYC311-Theme.json** — a custom Power BI report theme applied across all report pages to enforce consistent colour palette, font, and visual formatting. Stored in the `reports/` folder and version-controlled alongside the report definition.
 
 ---
 
@@ -201,13 +207,14 @@ powerbi-nyc311/
 ├── docs/
 │   └── data_dictionary.md                              ← Source column definitions
 ├── screenshots/
-│   ├── NYC311-model-diagram.png                        ← Semantic model view
+│   ├── 00_model_diagram.png                            ← Semantic model view
 │   ├── 01_overview_dashboard.png
 │   ├── 02_agency_performance.png
 │   ├── 03_geographic_analysis.png
 │   ├── 04_trend_analysis.png
-│   ├── 05_dax_measure_example.png
-│   └── 06_power_query_steps.png
+│   ├── 05_complaint_analysis.png
+│   ├── 06_dax_measure_example.png                      ← DAX Studio agg validation (needed)
+│   └── 07_pipeline_run_history.png                     ← Fabric pipeline run (needed)
 └── README.md
 ```
 

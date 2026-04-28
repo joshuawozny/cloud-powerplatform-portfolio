@@ -1,169 +1,132 @@
-# **Joshua’s Cloud & Power Platform Portfolio**  
-*Power Platform • Azure • DevOps • Data Analytics • Agile/PMP*
+# Joshua Wozny — Cloud & Power Platform Portfolio
+*Power Platform • Microsoft Fabric • Azure • DevOps • Data Analytics • Agile/PMP*
 
-This repository is a curated collection of projects that reflect my professional development journey — from my work as a **Data Analyst / Power BI Specialist & Power Platform Developer** with the **State of Vermont Agency of Transportation (2023–2026)** to my current role as a **Power Platform Consultant at IncWorx (2026–Present)**.
+This repository is a curated collection of projects reflecting my professional development journey — from delivering production Power Platform and analytics solutions at the **Vermont Agency of Transportation (2023–2026)** to my current role as a **Solution Engineer at IncWorx Consulting (2026–Present)**.
 
-Rather than listing job duties, this portfolio shows the **real solutions**, **architectures**, and **automations** I’ve built along the way.
+Rather than listing job duties, this portfolio demonstrates real solutions, architectures, and engineering decisions with full documentation, source control, and deployment practices that mirror enterprise standards.
 
 ---
 
-# **📌 Portfolio Overview**
+## 📌 Portfolio Overview
 
-This repository is organized into six major domains that align with my technical roadmap and real‑world experience:
+The repository is organized into six domains aligned to my technical roadmap and professional experience:
 
 ```
-/01-power-platform
-/02-azure-admin
-/03-data-analytics
-/04-devops
-/05-agile-pmp
-/06-capstone
+/01-power-platform   Power Platform & Microsoft Fabric solutions
+/02-azure-admin      Azure administration and infrastructure
+/03-data-analytics   Data engineering, semantic modeling, and Power BI
+/04-devops           Pipeline orchestration, source control, and deployment
+/05-agile-pmp        Agile and project management artifacts
+/06-capstone         Integrated enterprise solution (planned)
 ```
 
-Each folder contains:
-
-- Project documentation  
-- Architecture diagrams  
-- Code samples  
-- Screenshots  
-- Lessons learned  
-- Links to related certifications  
+Each domain contains project documentation, architecture diagrams, code, screenshots, and lessons learned linked to the certifications they support.
 
 ---
 
-# **💼 How My Work Experience Shapes This Portfolio**
+## 💼 Professional Background
 
-### **State of Vermont — Agency of Transportation (Aug 2023 – Jan 2026)**  
-**Data Analyst / Power BI Specialist & Power Platform Developer**
+### IncWorx Consulting — Solution Engineer (Power Platform | Power BI)
+*Remote | Feb 2026 – Present*
 
-My time at VTrans grounded me in real-world Power Platform and analytics work. Many of the foundational projects in this portfolio — dashboards, flows, and power app solutions — are inspired by the types of solutions I delivered there.
+Building enterprise-grade Power Platform solutions across industries, specializing in Power BI analytics, data modeling, and interactive dashboard design. Work covers Canvas and Model-Driven Power Apps integrated with Dataverse and Azure services, Power Automate workflow automation, and solution architecture with ALM and governance best practices.
 
-This experience shaped the **Power Platform** and **Data Analytics** sections of this portfolio.
+### State of Vermont, Agency of Transportation — Data Analyst / Power Platform Developer
+*Barre, VT | Aug 2023 – Jan 2026*
 
----
-
-### **IncWorx Consulting (Feb 2026 – Present)**  
-**Power Platform Consultant**
-
-At IncWorx, I work across industries building enterprise-grade solutions using:
-
-- Power Apps (Canvas & Model‑Driven)  
-- Power Automate  
-- Solution architecture & best practices  
-
-This role drives the **PL‑400**, **AZ‑104**, and **AZ‑400**‑aligned projects in this portfolio, especially the more advanced developer and DevOps work.
+Delivered production Power Platform solutions across the agency — including roadway performance dashboards, Power Apps for field data collection, a Central Data Inventory framework spanning 20+ divisions, and automated approval and reporting workflows. This experience grounded the foundations of the **Power Platform** and **Data Analytics** sections of this portfolio.
 
 ---
 
-# **📂 Project Domains**
+## 📂 Project Domains
 
-## **1. Power Platform Development**  
-*Power Apps • Dataverse • Power Automate • C# Plugins • PCF*
+### 1. Power Platform & Microsoft Fabric
+**`/01-power-platform`**
 
-Representative projects:
+The primary project in this section is the **NYC311 Fabric Data Platform** — an end-to-end analytics solution built on Microsoft Fabric featuring a medallion Lakehouse architecture (Bronze/Silver/Gold), Fabric pipeline orchestration, a mixed-mode Power BI semantic model (Dual/DirectQuery/Import), and a Dev/Test/Production deployment pipeline with reviewer-gated promotion.
 
-- **Dataverse C# Plugin**  
-- **PCF Custom Component**  
-- **Power Automate → Dataverse → Power BI Integration**  
-- **Model‑Driven App with Azure Function backend**
+Future additions will cover Canvas and Model-Driven Power Apps, Dataverse schema design, C# plugins, and PCF components aligned to the PL-200 and PL-400 tracks.
 
-📁 Folder: `/01-power-platform`
+📁 [01-power-platform →](./01-power-platform/)
 
 ---
 
-## **2. Azure Administration & Engineering**  
-*Identity • Networking • Governance • Automation*
+### 2. Azure Administration & Engineering
+**`/02-azure-admin`**
 
-Representative projects:
+Azure administration and infrastructure projects aligned to the AZ-104 track. Content will cover identity and access management, virtual networking, storage, governance, and Infrastructure as Code using Bicep and/or Terraform.
 
-- **VNET + Peering Lab**  
-- **Entra ID RBAC Demo**  
-- **Azure Cost Model (Law Firm Scenario)**  
-- **Azure Function API for Power Platform**
-
-📁 Folder: `/02-azure-admin`
+📁 [02-azure-admin →](./02-azure-admin/) *(In development — AZ-104 track)*
 
 ---
 
-## **3. Data Analytics & Power BI**  
-*DAX • Data Modeling • Visualization*
+### 3. Data Analytics & Power BI
+**`/03-data-analytics`**
 
-Representative projects:
+**Active project:** [NYC311 Fabric Data Platform & Power BI Dashboard](./03-data-analytics/powerbi-nyc311/) — a full data engineering and analytics project using the NYC Open Data 311 API. Covers incremental API ingestion, medallion Delta table architecture, star schema semantic model design, 19 DAX measures including time intelligence and SLA analytics, aggregation table optimization, and a multi-page Power BI report.
 
-- **Bill4Time Power BI Dashboard**  
-- **Time‑Intelligence DAX Measures**  
-- **Data Model Optimization Case Study**
+Planned additions include a reusable Time Intelligence DAX library and a data model optimization case study.
 
-📁 Folder: `/03-data-analytics`
+📁 [03-data-analytics →](./03-data-analytics/)
 
 ---
 
-## **4. DevOps & Infrastructure as Code**  
-*Azure DevOps • CI/CD • Terraform • Bicep*
+### 4. DevOps — Pipeline Orchestration & Source Control
+**`/04-devops`**
 
-Representative projects:
+Current content covers the Fabric-native pipeline orchestrating the NYC311 platform (incremental ingestion, medallion transformation, semantic model refresh) and the Git feature branch workflow with PR-gated merges and Fabric deployment pipeline integration.
 
-- **CI/CD Pipeline for Power Platform Solutions**  
-- **IaC Templates for Azure Environments**  
-- **Automated Deployment Strategy**
+Future additions will include Azure DevOps YAML pipelines and Power Platform ALM automation aligned to the AZ-400 and PL-400 tracks.
 
-📁 Folder: `/04-devops`
+📁 [04-devops →](./04-devops/)
 
 ---
 
-## **5. Agile & PMP Project Artifacts**  
-*Scrum • Kanban • Hybrid PMBOK*
+### 5. Agile & Project Management
+**`/05-agile-pmp`**
 
-Representative artifacts:
+Sprint plans, Kanban workflows, project charters, and risk registers demonstrating Agile and PMP-aligned project delivery practices. Aligned to PMP eligibility completion alongside the MS in Information Technology.
 
-- **Sprint Plan + Retrospective**  
-- **Kanban Workflow**  
-- **Project Charter & Risk Register**
-
-📁 Folder: `/05-agile-pmp`
+📁 [05-agile-pmp →](./05-agile-pmp/) *(In development — PMP track)*
 
 ---
 
-## **6. Capstone Project — Integrated Cloud Solution**  
-This is the flagship project that brings everything together:
+### 6. Capstone — Integrated Enterprise Solution
+**`/06-capstone`**
 
-- Power Apps  
-- Dataverse + C# plugin  
-- PCF component  
-- Azure Functions  
-- CI/CD pipeline  
-- Terraform/Bicep IaC  
-- Agile sprint artifacts  
-- PMP documentation  
+The flagship project bringing together Power Platform, Azure, DevOps, and project documentation into a single end-to-end enterprise solution. Planned for 2027 as the culmination of the certification roadmap and portfolio development.
 
-📁 Folder: `/06-capstone`
+📁 [06-capstone →](./06-capstone/) *(Planned 2027)*
 
 ---
 
-# **🎓 Certifications & Roadmap Alignment**
+## 🎓 Certifications & Roadmap
 
-Each project is tagged with the certifications it supports:
+| Certification | Status |
+|---|---|
+| PL-900 — Power Platform Fundamentals | ✅ 2025 |
+| PL-300 — Power BI Data Analyst Associate | 🎯 Active |
+| PL-200 — Power Platform Functional Consultant Associate | 📋 Planned Q3 2026 |
+| DP-300 — Azure Database Administrator Associate | 📋 Planned Q4 2026 |
+| PL-400 — Power Platform Developer | 📋 Planned 2027 |
+| AZ-104 — Azure Administrator Associate | 📋 Planned 2027 |
+| AZ-400 — Azure DevOps Engineer Expert | 📋 Planned 2027 |
+| PMP — Project Management Professional | 📋 Planned 2027 |
 
-- **PL‑900** — Power Platform Fundamentals  
-- **AZ‑900** — Azure Fundamentals  
-- **PL‑300** — Power BI Data Analyst  
-- **AZ‑104** — Azure Administrator  
-- **PMI‑ACP** — Agile Certified Practitioner  
-- **PL‑400** — Power Platform Developer  
-- **AZ‑400** — DevOps Engineer Expert  
-- **PMP** — Project Management Professional  
-
-This portfolio evolves as I progress through my roadmap.
+Full roadmap with Gantt timeline: [roadmap/README.md →](./roadmap/README.md)
 
 ---
 
-# **📫 Connect With Me**
+## 📐 Standards
 
-- **GitHub Profile:** [github.com/joshuawozny](https://github.com/joshuawozny)
-- **LinkedIn:** [joshua-wozny-bathnh](https://www.linkedin.com/in/joshua-wozny-bathnh)
+Portfolio-wide conventions for file naming, folder structure, Azure resource naming, Power Platform solution naming, and DevOps pipeline naming are documented in the standards hub.
+
+📁 [standards/ →](./standards/README.md)
+
+---
+
+## 📫 Connect
+
+- **GitHub:** [github.com/joshuawozny](https://github.com/joshuawozny)
+- **LinkedIn:** [linkedin.com/in/joshua-wozny-bathnh](https://www.linkedin.com/in/joshua-wozny-bathnh)
 - **Email:** joshwozny@live.com
-
----
-## 📘 Documentation & Roadmap
-- [Professional Development Roadmap](./roadmap/README.md)
-- [Standards Documentation](./standards/README.md)

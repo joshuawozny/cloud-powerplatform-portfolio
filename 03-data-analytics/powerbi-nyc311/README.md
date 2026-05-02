@@ -237,8 +237,8 @@ Open any `.tmdl` file in the `reports/NYC_311_Service_Requests_Dashboard.Semanti
 | Certification | Status | Alignment |
 |---|---|---|
 | PL-900 — Power Platform Fundamentals | ✅ 2025 | Platform foundation |
-| PL-300 — Power BI Data Analyst Associate | 🎯 Active | Semantic model, DAX, visualization, aggregations |
-| DP-600 — Fabric Analytics Engineer Associate | 📋 Planned | Lakehouse, medallion architecture, pipeline orchestration |
+| PL-300 — Power BI Data Analyst Associate | ✅ 2026 | Semantic model, DAX, visualization, aggregations |
+| DP-600 — Fabric Analytics Engineer Associate | 🎯 Active | Lakehouse, medallion architecture, pipeline orchestration |
 
 ---
 

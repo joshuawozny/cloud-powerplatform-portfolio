@@ -85,7 +85,7 @@ NYC311 Power BI Report
 └── README.md
 ```
 
-*Canvas App, Model-Driven App, Dataverse, C# plugin, and PCF component subfolders will be added as PL-200 and PL-400 projects are developed.*
+*Canvas App, Model-Driven App, Dataverse, C# plugin, and PCF component subfolders will be added as PL-400 projects are developed.*
 
 ---
 
@@ -107,8 +107,8 @@ The `.pbip` project files and TMDL semantic model definitions in `03-data-analyt
 | Certification | Status | Relevance |
 |---|---|---|
 | PL-900 — Power Platform Fundamentals | ✅ 2025 | Platform foundation |
-| PL-300 — Power BI Data Analyst Associate | 🎯 In Progress | Semantic model, DAX, Fabric connectivity |
-| PL-200 — Power Platform Functional Consultant | 📋 Planned | Canvas Apps, Dataverse, automation |
+| PL-300 — Power BI Data Analyst Associate | ✅ 2026 | Semantic model, DAX, Fabric connectivity |
+
 | PL-400 — Power Platform Developer | 📋 Planned | C# plugins, PCF components, ALM |
 | DP-600 — Fabric Analytics Engineer Associate | 📋 Planned | Lakehouse, medallion architecture, Fabric pipelines |
 

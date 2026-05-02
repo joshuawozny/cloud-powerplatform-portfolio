@@ -115,7 +115,8 @@ When added, IaC content will cover:
 
 | Certification | Status | Relevance |
 |---|---|---|
-| PL-300 — Power BI Data Analyst Associate | 🎯 In Progress | Semantic model refresh, pipeline-triggered dataset updates |
+| PL-300 — Power BI Data Analyst Associate | ✅ 2026 | Semantic model refresh, pipeline-triggered dataset updates |
+| DP-600 — Fabric Analytics Engineer Associate | 🎯 Active | Fabric pipeline orchestration, Lakehouse architecture |
 | PL-400 — Power Platform Developer | 📋 Planned | Power Platform ALM, solution export/import automation |
 | AZ-104 — Azure Administrator Associate | 📋 Planned | Azure resource management, service principals, IaC fundamentals |
 | AZ-400 — Azure DevOps Engineer Expert | 📋 Planned | YAML pipelines, release management, deployment automation |

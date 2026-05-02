@@ -45,7 +45,7 @@ Delivered production Power Platform solutions across the agency — including ro
 
 The primary project in this section is the **NYC311 Fabric Data Platform** — an end-to-end analytics solution built on Microsoft Fabric featuring a medallion Lakehouse architecture (Bronze/Silver/Gold), Fabric pipeline orchestration, a mixed-mode Power BI semantic model (Dual/DirectQuery/Import), and a Dev/Test/Production deployment pipeline with reviewer-gated promotion.
 
-Future additions will cover Canvas and Model-Driven Power Apps, Dataverse schema design, C# plugins, and PCF components aligned to the PL-200 and PL-400 tracks.
+Future additions will cover Canvas and Model-Driven Power Apps, Dataverse schema design, C# plugins, and PCF components aligned to the PL-400 track.
 
 📁 [01-power-platform →](./01-power-platform/)
 
@@ -105,8 +105,8 @@ The flagship project bringing together Power Platform, Azure, DevOps, and projec
 | Certification | Status |
 |---|---|
 | PL-900 — Power Platform Fundamentals | ✅ 2025 |
-| PL-300 — Power BI Data Analyst Associate | 🎯 Active |
-| PL-200 — Power Platform Functional Consultant Associate | 📋 Planned Q3 2026 |
+| PL-300 — Power BI Data Analyst Associate | ✅ 2026 |
+| DP-600 — Fabric Analytics Engineer Associate | 🎯 Active |
 | DP-300 — Azure Database Administrator Associate | 📋 Planned Q4 2026 |
 | PL-400 — Power Platform Developer | 📋 Planned 2027 |
 | AZ-104 — Azure Administrator Associate | 📋 Planned 2027 |

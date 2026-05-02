@@ -4,7 +4,7 @@
 
 This section documents Azure administration and infrastructure projects aligned to the **AZ-104** certification track and supporting the broader cloud engineering roadmap. Projects will cover the core Azure administrator domains: identity and access management, virtual networking, storage, compute, monitoring, and governance — with Infrastructure as Code (Bicep and/or Terraform) applied throughout.
 
-Content in this section is planned for development following PL-300 and PL-200 completion. Projects will be built as hands-on labs with full documentation, architecture diagrams, and lessons learned, mirroring the engineering standards applied in the existing Power Platform and Fabric sections.
+Content in this section is planned for development following PL-300 completion. Projects will be built as hands-on labs with full documentation, architecture diagrams, and lessons learned, mirroring the engineering standards applied in the existing Power Platform and Fabric sections.
 
 ---
 
@@ -86,6 +86,7 @@ All lab environments will be deployed via IaC to ensure reproducibility and vers
 |---|---|---|
 | AZ-104 — Azure Administrator Associate | 📋 Planned 2027 | Identity, networking, storage, compute, monitoring |
 | AZ-400 — Azure DevOps Engineer Expert | 📋 Planned 2027 | IaC pipelines, deployment automation |
+| DP-600 — Fabric Analytics Engineer Associate | 🎯 Active | Fabric Lakehouse, pipelines, semantic model |
 | DP-300 — Azure Database Administrator Associate | 📋 Planned Q4 2026 | Azure SQL, managed instances, backup and recovery |
 
 ---

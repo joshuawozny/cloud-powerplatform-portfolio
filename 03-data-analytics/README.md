@@ -73,8 +73,8 @@ Full architecture documentation: [`./docs/lakehouse-architecture.md`](./docs/lak
 | Certification | Status | Project Alignment |
 |---|---|---|
 | PL-900 — Power Platform Fundamentals | ✅ 2025 | Platform foundation |
-| PL-300 — Power BI Data Analyst Associate | 🎯 Active | NYC311 semantic model, DAX, visualization |
-| PL-200 — Power Platform Functional Consultant | 📋 Planned | Future Canvas App / Dataverse projects |
+| PL-300 — Power BI Data Analyst Associate | ✅ 2026 | NYC311 semantic model, DAX, visualization |
+| DP-600 — Fabric Analytics Engineer Associate | 🎯 Active | NYC311 Lakehouse, medallion architecture, pipelines |
 | DP-600 — Fabric Analytics Engineer Associate | 📋 Planned | NYC311 Lakehouse, medallion architecture, pipelines |
 
 ---

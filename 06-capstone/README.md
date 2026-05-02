@@ -105,7 +105,6 @@ Project Management
 
 | Certification | Relevance |
 |---|---|
-| PL-200 — Power Platform Functional Consultant | Canvas App, Dataverse, Power Automate |
 | PL-400 — Power Platform Developer | C# Plugin, PCF Component, ALM pipeline |
 | AZ-104 — Azure Administrator | Identity, networking, storage, compute |
 | AZ-400 — Azure DevOps Engineer | CI/CD pipelines, IaC, release management |
